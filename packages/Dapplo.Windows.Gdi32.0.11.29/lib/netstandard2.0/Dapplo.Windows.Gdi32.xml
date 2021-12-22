@@ -1,0 +1,1396 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dapplo.Windows.Gdi32</name>
+    </assembly>
+    <members>
+        <member name="T:Dapplo.Windows.Gdi32.Enums.BitmapCompressionMethods">
+            <summary>
+                Type of compression used for the bitmap in the BitmapInfoHeader
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.BitmapCompressionMethods.BI_RGB">
+            <summary>
+                No compression
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.BitmapCompressionMethods.BI_RLE8">
+            <summary>
+                RLE 8BPP
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.BitmapCompressionMethods.BI_RLE4">
+            <summary>
+                RLE 4BPP
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.BitmapCompressionMethods.BI_BITFIELDS">
+            <summary>
+                Specifies that the bitmap is not compressed and that the color table consists of three DWORD color masks that
+                specify the
+                red, green, and blue components, respectively, of each pixel. This is valid when used with 16- and 32-bpp bitmaps.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.BitmapCompressionMethods.BI_JPEG">
+            <summary>
+                Indicates that the image is a JPEG image.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.BitmapCompressionMethods.BI_PNG">
+            <summary>
+                Indicates that the image is a PNG image.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Enums.ColorSpace">
+            <summary>
+            For values see the bV5CSType property <a href="https://docs.microsoft.com/en-gb/windows/desktop/api/wingdi/ns-wingdi-bitmapv5header">here</a>
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.LCS_CALIBRATED_RGB">
+            <summary>
+                Color values are calibrated red green blue (RGB) values.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.LCS_GM_BUSINESS">
+            <summary>
+                Maintains saturation. Used for business charts and other situations in which undithered colors are required.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.LCS_GM_GRAPHICS">
+            <summary>
+                Maintains colorimetric match. Used for graphic designs and named colors.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.LCS_GM_IMAGES">
+            <summary>
+                Maintains contrast. Used for photographs and natural images.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.LCS_GM_ABS_COLORIMETRIC">
+            <summary>
+                Maintains the white point. Matches the colors to their nearest color in the destination gamut.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.LCS_sRGB">
+            <summary>
+                The value is an encoding of the ASCII characters "sRGB", and it indicates that the color values are sRGB values.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.LCS_WINDOWS_COLOR_SPACE">
+            <summary>
+                The value is an encoding of the ASCII characters "Win ", including the trailing space, and it indicates that the
+                color values are Windows default color space values.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.PROFILE_LINKED">
+            <summary>
+                This value indicates that bV5ProfileData points to the file name of the profile to use (gamma and endpoints values
+                are ignored).
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.ColorSpace.PROFILE_EMBEDDED">
+            <summary>
+                This value indicates that bV5ProfileData points to a memory buffer that contains the profile to be used (gamma and
+                endpoints values are ignored).
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Enums.DeviceCaps">
+            <summary>
+                Used by GDI32.GetDeviceCaps
+                See: http://msdn.microsoft.com/en-us/library/windows/desktop/dd144877%28v=vs.85%29.aspx
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.DRIVERVERSION">
+            <summary>
+                Device driver version
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.TECHNOLOGY">
+            <summary>
+                Device classification
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.HORZSIZE">
+            <summary>
+                Horizontal size in millimeters
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.VERTSIZE">
+            <summary>
+                Vertical size in millimeters
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.HORZRES">
+            <summary>
+                Horizontal width in pixels
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.VERTRES">
+            <summary>
+                Vertical height in pixels
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.BITSPIXEL">
+            <summary>
+                Number of bits per pixel
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.PLANES">
+            <summary>
+                Number of planes
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.NUMBRUSHES">
+            <summary>
+                Number of brushes the device has
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.NUMPENS">
+            <summary>
+                Number of pens the device has
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.NUMMARKERS">
+            <summary>
+                Number of markers the device has
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.NUMFONTS">
+            <summary>
+                Number of fonts the device has
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.NUMCOLORS">
+            <summary>
+                Number of colors the device supports
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.PDEVICESIZE">
+            <summary>
+                Size required for device descriptor
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.CURVECAPS">
+            <summary>
+                Curve capabilities
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.LINECAPS">
+            <summary>
+                Line capabilities
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.POLYGONALCAPS">
+            <summary>
+                Polygonal capabilities
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.TEXTCAPS">
+            <summary>
+                Text capabilities
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.CLIPCAPS">
+            <summary>
+                Clipping capabilities
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.RASTERCAPS">
+            <summary>
+                Bitblt capabilities
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.ASPECTX">
+            <summary>
+                Length of the X leg
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.ASPECTY">
+            <summary>
+                Length of the Y leg
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.ASPECTXY">
+            <summary>
+                Length of the hypotenuse
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.SHADEBLENDCAPS">
+            <summary>
+                Shading and Blending caps
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.LOGPIXELSX">
+            <summary>
+                Logical pixels inch in X
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.LOGPIXELSY">
+            <summary>
+                Logical pixels inch in Y
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.SIZEPALETTE">
+            <summary>
+                Number of entries in physical palette
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.NUMRESERVED">
+            <summary>
+                Number of reserved entries in palette
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.COLORRES">
+            <summary>
+                Actual color resolution
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.PHYSICALWIDTH">
+            <summary>
+                Physical Width in device units
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.PHYSICALHEIGHT">
+            <summary>
+                Physical Height in device units
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.PHYSICALOFFSETX">
+            <summary>
+                Physical Printable Area x margin
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.PHYSICALOFFSETY">
+            <summary>
+                Physical Printable Area y margin
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.SCALINGFACTORX">
+            <summary>
+                Scaling factor x
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.SCALINGFACTORY">
+            <summary>
+                Scaling factor y
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.VREFRESH">
+            <summary>
+                Current vertical refresh rate of the display device (for displays only) in Hz
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.DESKTOPVERTRES">
+            <summary>
+                Horizontal width of entire desktop in pixels
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.DESKTOPHORZRES">
+            <summary>
+                Vertical height of entire desktop in pixels
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DeviceCaps.BLTALIGNMENT">
+            <summary>
+                Preferred blt alignment
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Enums.DibColors">
+            <summary>
+                The DIBColors enumeration defines how to interpret the values in the color table of a DIB.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DibColors.RgbColors">
+            <summary>
+                The color table contains literal RGB values.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DibColors.PalColors">
+            <summary>
+            The color table consists of an array of 16-bit indexes into the LogPalette object (section 2.2.17) that is currently defined in the playback device context.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.DibColors.PalIndices">
+            <summary>
+            No color table exists. The pixels in the DIB are indices into the current logical palette in the playback device context.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Enums.GdiPlusStatus">
+            <summary>
+                Status result for GDI+ calls
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Enums.GpUnit">
+            <summary>
+                GDI Plus unit description.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.GpUnit.UnitWorld">
+            <summary>
+                World coordinate (non-physical unit).
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.GpUnit.UnitDisplay">
+            <summary>
+                Variable - for PageTransform only.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.GpUnit.UnitPixel">
+            <summary>
+                Each unit is one device pixel.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.GpUnit.UnitPoint">
+            <summary>
+                Each unit is a printer's point, or 1/72 inch.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.GpUnit.UnitInch">
+            <summary>
+                Each unit is 1 inch.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.GpUnit.UnitDocument">
+            <summary>
+                Each unit is 1/300 inch.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.GpUnit.UnitMillimeter">
+            <summary>
+                Each unit is 1 millimeter.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Enums.RasterOperations">
+            <summary>
+                A raster-operation code. These codes define how the color data for the source rectangle is to be combined with the
+                color data for the destination rectangle to achieve the final color.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.SourceCopy">
+            <summary>
+                The source area is copied directly to the destination area.
+                dest = source
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.SourcePaint">
+            <summary>
+                The colors of the source and destination areas are combined using the Boolean OR operator.
+                dest = source OR dest
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.SourceAnd">
+            <summary>
+                The colors of the source and destination areas are combined using the Boolean AND operator.
+                dest = source AND dest
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.SourceInvert">
+            <summary>
+                The colors of the source and destination areas are combined using the Boolean XOR operator.
+                dest = source XOR dest
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.SourceErase">
+            <summary>
+                The inverted colors of the destination area are combined with the colors of the source area using the Boolean AND
+                operator.
+                dest = source AND (NOT dest)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.NoMirrorBitmap">
+            <summary>
+                The bitmap is not mirrored.
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.NotSourceCopy">
+            <summary>
+                The inverted source area is copied to the destination.
+                dest = (NOT source)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.NotSourceErase">
+            <summary>
+                The source and destination colors are combined using the Boolean OR operator, and then resultant color is then
+                inverted.
+                dest = (NOT src) AND (NOT dest)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.MergeCopy">
+            <summary>
+                The colors of the source area are merged with the colors of the selected brush of the destination device context
+                using the Boolean AND operator.
+                dest = (source AND pattern)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.MergePaint">
+            <summary>
+                The colors of the inverted source area are merged with the colors of the destination area by using the Boolean OR
+                operator.
+                dest = (NOT source) OR dest
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.PatternCopy">
+            <summary>
+                The brush currently selected in the destination device context is copied to the destination bitmap.
+                dest = pattern
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.PatternPaint">
+            <summary>
+                The colors of the brush currently selected in the destination device context are combined with the colors of the
+                inverted source area using the Boolean OR operator.
+                The result of this operation is combined with the colors of the destination area using the Boolean OR operator.
+                dest = DPSnoo
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.PatternInvert">
+            <summary>
+                The colors of the brush currently selected in the destination device context are combined with the colors of the
+                destination are using the Boolean XOR operator.
+                dest = pattern XOR dest
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.DestinationInvert">
+            <summary>
+                The destination area is inverted.
+                dest = (NOT dest)
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.Blackness">
+            <summary>
+                The destination area is filled by using the color associated with index 0 in the physical palette. (This color is
+                black for the default physical palette.)
+                dest = BLACK
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.Whiteness">
+            <summary>
+                The destination area is filled by using the color associated with index 1 in the physical palette. (This color is
+                white for the default physical palette.)
+                dest = WHITE
+            </summary>
+        </member>
+        <member name="F:Dapplo.Windows.Gdi32.Enums.RasterOperations.CaptureBlt">
+            <summary>
+                Windows that are layered on top of your window are included in the resulting image.
+                By default, the image contains only your window.
+                Note that this generally cannot be used for printing device contexts.
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Gdi32Api">
+            <summary>
+                Gdi32 Helpers
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.BitBlt(System.Runtime.InteropServices.SafeHandle,System.Int32,System.Int32,System.Int32,System.Int32,System.Runtime.InteropServices.SafeHandle,System.Int32,System.Int32,Dapplo.Windows.Gdi32.Enums.RasterOperations)">
+            <summary>
+                The BitBlt function performs a bit-block transfer of the color data corresponding to a rectangle of pixels from the
+                specified source device context into a destination device context.
+            </summary>
+            <param name="hdcDest">A handle to the destination device context.</param>
+            <param name="nXDest">The x-coordinate, in logical units, of the upper-left corner of the destination rectangle.</param>
+            <param name="nYDest">The y-coordinate, in logical units, of the upper-left corner of the destination rectangle.</param>
+            <param name="nWidth">The width, in logical units, of the source and destination rectangles.</param>
+            <param name="nHeight">The height, in logical units, of the source and the destination rectangles.</param>
+            <param name="hdcSrc">A handle to the source device context.</param>
+            <param name="nXSrc">The x-coordinate, in logical units, of the upper-left corner of the source rectangle.</param>
+            <param name="nYSrc">The y-coordinate, in logical units, of the upper-left corner of the source rectangle.</param>
+            <param name="rasterOperation">
+                A raster-operation code. These codes define how the color data for the source rectangle
+                is to be combined with the color data for the destination rectangle to achieve the final color.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.BitBlt(System.Drawing.Graphics,System.Drawing.Bitmap,System.Drawing.Rectangle,Dapplo.Windows.Common.Structs.NativePoint,Dapplo.Windows.Gdi32.Enums.RasterOperations)">
+            <summary>
+                Bitblt extension for the graphics object
+            </summary>
+            <param name="target">Graphics</param>
+            <param name="sourceBitmap">Bitmap</param>
+            <param name="source">Rectangle</param>
+            <param name="destination">Point</param>
+            <param name="rasterOperations">RasterOperations</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.CreateCompatibleDC(System.Runtime.InteropServices.SafeHandle)">
+            <summary>
+                The CreateCompatibleDC function creates a memory device context (DC) compatible with the specified device.
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd183489(v=vs.85).aspx">
+                    CreateCompatibleDC
+                    function
+                </a>
+            </summary>
+            <param name="hDc">
+                A handle to an existing DC. If this handle is NULL, the function creates a memory DC compatible with
+                the application's current screen.
+            </param>
+            <returns>
+                If the function succeeds, the return value is the handle to a memory DC.
+                If the function fails, the return value is NULL.
+            </returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.CreateDIBSection(System.Runtime.InteropServices.SafeHandle,Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader@,Dapplo.Windows.Gdi32.Enums.DibColors,System.IntPtr@,System.IntPtr,System.UInt32)">
+            <summary>
+                The CreateDIBSection function creates a DIB that applications can write to directly.
+                The function gives you a pointer to the location of the bitmap bit values.
+                You can supply a handle to a file-mapping object that the function will use to create the bitmap, or you can let
+                the system allocate the memory for the bitmap.
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd183494(v=vs.85).aspx">CreateDIBSection function</a>
+            </summary>
+            <param name="hdc">
+                A handle to a device context. If the value of iUsage is DIB_PAL_COLORS, the function uses this device
+                context's logical palette to initialize the DIB colors.
+            </param>
+            <param name="bmi">
+                A pointer to a BITMAPINFO structure that specifies various attributes of the DIB, including the
+                bitmap dimensions and colors.
+            </param>
+            <param name="usage">
+                The type of data contained in the bmiColors array member of the BITMAPINFO structure pointed to by pbmi (either
+                logical palette indexes or literal RGB values).
+                The following values are defined.
+                DIB_PAL_COLORS The bmiColors member is an array of 16-bit indexes into the logical palette of the device context
+                specified by hdc.
+                DIB_RGB_COLORS The BITMAPINFO structure contains an array of literal RGB values.
+            </param>
+            <param name="bits">A pointer to a variable that receives a pointer to the location of the DIB bit values.</param>
+            <param name="hSection">
+                A handle to a file-mapping object that the function will use to create the DIB. This parameter can be NULL.
+                If hSection is not NULL, it must be a handle to a file-mapping object created by calling the CreateFileMapping
+                function with the PAGE_READWRITE or PAGE_WRITECOPY flag. Read-only DIB sections are not supported. Handles created
+                by other means will cause CreateDIBSection to fail.
+                If hSection is not NULL, the CreateDIBSection function locates the bitmap bit values at offset dwOffset in the
+                file-mapping object referred to by hSection. An application can later retrieve the hSection handle by calling the
+                GetObject function with the HBITMAP returned by CreateDIBSection.
+                If hSection is NULL, the system allocates memory for the DIB. In this case, the CreateDIBSection function ignores
+                the dwOffset parameter. An application cannot later obtain a handle to this memory. The dshSection member of the
+                DIBSECTION structure filled in by calling the GetObject function will be NULL.
+            </param>
+            <param name="dwOffset">
+                The offset from the beginning of the file-mapping object referenced by hSection where storage
+                for the bitmap bit values is to begin. This value is ignored if hSection is NULL. The bitmap bit values are aligned
+                on doubleword boundaries, so dwOffset must be a multiple of the size of a DWORD.
+            </param>
+            <returns>
+                If the function succeeds, the return value is a handle to the newly created DIB, and *ppvBits points to the bitmap
+                bit values.
+                If the function fails, the return value is NULL, and *ppvBits is NULL.
+            </returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.CreateRectRgn(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                The CreateRectRgn function creates a rectangular region.
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd183514(v=vs.85).aspx">CreateRectRgn function</a>
+            </summary>
+            <param name="nLeftRect">Specifies the x-coordinate of the upper-left corner of the region in logical units.</param>
+            <param name="nTopRect">Specifies the y-coordinate of the upper-left corner of the region in logical units.</param>
+            <param name="nRightRect">Specifies the x-coordinate of the lower-right corner of the region in logical units.</param>
+            <param name="nBottomRect">Specifies the y-coordinate of the lower-right corner of the region in logical units.</param>
+            <returns>
+                If the function succeeds, the return value is the handle to the region.
+                If the function fails, the return value is NULL.
+            </returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.GetDeviceCaps(System.Runtime.InteropServices.SafeHandle,Dapplo.Windows.Gdi32.Enums.DeviceCaps)">
+            <summary>
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd144877(v=vs.85).aspx">GetDeviceCaps function</a>
+                The GetDeviceCaps function retrieves device-specific information for the specified device.
+            </summary>
+            <param name="hdc">A handle to the DC.</param>
+            <param name="nIndex">The item to be returned</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.GetPixel(System.Runtime.InteropServices.SafeHandle,System.Int32,System.Int32)">
+            <summary>
+                See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd144909(v=vs.85).aspx">GetPixel function</a>
+                The GetPixel function retrieves the red, green, blue (RGB) color value of the pixel at the specified coordinates.
+            </summary>
+            <param name="hdc">A handle to the device context.</param>
+            <param name="nXPos">The x-coordinate, in logical units, of the pixel to be examined.</param>
+            <param name="nYPos">The y-coordinate, in logical units, of the pixel to be examined.</param>
+            <returns>
+                The return value is the COLORREF value that specifies the RGB of the pixel. If the pixel is outside of the
+                current clipping region, the return value is CLR_INVALID (0xFFFFFFFF defined in Wingdi.h).
+            </returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.SelectObject(System.Runtime.InteropServices.SafeHandle,System.Runtime.InteropServices.SafeHandle)">
+            <summary>
+                The SelectObject function selects an object into the specified device context (DC). The new object replaces the
+                previous object of the same type.
+            </summary>
+            <param name="hDc">A handle to the DC.</param>
+            <param name="hObject">
+                A handle to the object to be selected. The specified object must have been created by using one of the following
+                functions.
+                Object	Functions
+                Bitmap  CreateBitmap, CreateBitmapIndirect, CreateCompatibleBitmap, CreateDIBitmap, CreateDIBSection
+                (Bitmaps can only be selected into memory DC's. A single bitmap cannot be selected into more than one DC at the
+                same time.)
+                Brush   CreateBrushIndirect, CreateDIBPatternBrush, CreateDIBPatternBrushPt, CreateHatchBrush, CreatePatternBrush,
+                CreateSolidBrush
+                Font    CreateFont, CreateFontIndirect
+                Pen     CreatePen, CreatePenIndirect
+                Region  CombineRgn, CreateEllipticRgn, CreateEllipticRgnIndirect, CreatePolygonRgn, CreateRectRgn,
+                CreateRectRgnIndirect
+            </param>
+            <returns>
+                If the selected object is not a region and the function succeeds, the return value is a handle to the object being
+                replaced.
+                If the selected object is a region and the function succeeds, the return value is one of the following values.
+                SIMPLEREGION	Region consists of a single rectangle.
+                COMPLEXREGION	Region consists of more than one rectangle.
+                NULLREGION	Region is empty.
+            </returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.StretchBlt(System.Runtime.InteropServices.SafeHandle,System.Int32,System.Int32,System.Int32,System.Int32,System.Runtime.InteropServices.SafeHandle,System.Int32,System.Int32,System.Int32,System.Int32,Dapplo.Windows.Gdi32.Enums.RasterOperations)">
+            <summary>
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd145120(v=vs.85).aspx">StretchBlt function</a>
+            </summary>
+            <param name="hdcDest">A handle to the destination device context.</param>
+            <param name="nXOriginDest">The x-coordinate, in logical units, of the upper-left corner of the destination rectangle.</param>
+            <param name="nYOriginDest">The y-coordinate, in logical units, of the upper-left corner of the destination rectangle.</param>
+            <param name="nWidthDest">The width, in logical units, of the destination rectangle.</param>
+            <param name="nHeightDest">The height, in logical units, of the destination rectangle.</param>
+            <param name="hdcSrc">A handle to the source device context.</param>
+            <param name="nXOriginSrc">The x-coordinate, in logical units, of the upper-left corner of the source rectangle.</param>
+            <param name="nYOriginSrc">The y-coordinate, in logical units, of the upper-left corner of the source rectangle.</param>
+            <param name="nWidthSrc">The width, in logical units, of the source rectangle.</param>
+            <param name="nHeightSrc">The height, in logical units, of the source rectangle.</param>
+            <param name="rasterOperation">
+                he raster operation to be performed. Raster operation codes define how the system combines colors in output
+                operations that involve a brush, a source bitmap, and a destination bitmap.
+                See BitBlt for a list of common raster operation codes (ROPs). Note that the CAPTUREBLT ROP generally cannot be
+                used for printing device contexts.
+            </param>
+            <returns>bool true if success</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.StretchBlt(System.Drawing.Graphics,System.Drawing.Bitmap,System.Drawing.Rectangle,System.Drawing.Rectangle,Dapplo.Windows.Gdi32.Enums.RasterOperations)">
+            <summary>
+                StretchBlt extension for the graphics object
+                Doesn't work?
+            </summary>
+            <param name="target">Graphics</param>
+            <param name="sourceBitmap">Bitmap</param>
+            <param name="source">Rectangle</param>
+            <param name="destination">Rectangle</param>
+            <param name="rasterOperation">RasterOperations</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Gdi32Api.DeleteObject(System.IntPtr)">
+            <summary>
+            The DeleteObject function deletes a logical pen, brush, font, bitmap, region, or palette, freeing all system resources associated with the object. After the object is deleted, the specified handle is no longer valid.
+            </summary>
+            <param name="hObject">A handle to a logical pen, brush, font, bitmap, region, or palette.</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.GdiExtensions">
+            <summary>
+                Some extensions for GDI stuff
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiExtensions.AreRectangleCornersVisisble(System.Drawing.Region,Dapplo.Windows.Common.Structs.NativeRect)">
+            <summary>
+                Check if all the corners of the rectangle are visible in the specified region.
+                Not a perfect check, but this currently a workaround for checking if a window is completely visible
+            </summary>
+            <param name="region"></param>
+            <param name="rectangle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiExtensions.GetSafeDeviceContext(System.Drawing.Graphics)">
+            <summary>
+                Get a SafeHandle for the GetHdc, so one can use using to automatically cleanup the devicecontext
+            </summary>
+            <param name="graphics">Graphics</param>
+            <returns>SafeGraphicsDcHandle</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiExtensions.GetSafeHBitmapHandle(System.Drawing.Bitmap)">
+            <summary>
+                Get a SafeHBitmapHandle so one can use using to automatically cleanup the HBitmap
+            </summary>
+            <param name="bitmap">Bitmap</param>
+            <returns>SafeHBitmapHandle</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.GdiPlusApi">
+            <summary>
+                GDIplus Helpers
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiPlusApi.ApplyBlur(System.Drawing.Bitmap,System.Drawing.Rectangle,System.Int32,System.Boolean)">
+            <summary>
+                Use the GDI+ blur effect on the bitmap
+            </summary>
+            <param name="destinationBitmap">Bitmap to apply the effect to</param>
+            <param name="area">Rectangle to apply the blur effect to</param>
+            <param name="radius">0-255</param>
+            <param name="expandEdges">bool true if the edges are expanded with the radius</param>
+            <returns>false if there is no GDI+ available or an exception occured</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiPlusApi.DrawWithBlur(System.Drawing.Graphics,System.Drawing.Bitmap,System.Drawing.Rectangle,System.Drawing.Drawing2D.Matrix,System.Drawing.Imaging.ImageAttributes,System.Int32,System.Boolean)">
+            <summary>
+                Draw the image on the graphics with GDI+ blur effect
+            </summary>
+            <returns>false if there is no GDI+ available or an exception occured</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiPlusApi.GetNativeGraphics(System.Drawing.Graphics)">
+            <summary>
+                Get the NativeGraphics field from the graphics
+            </summary>
+            <param name="graphics"></param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiPlusApi.GetNativeImage(System.Drawing.Bitmap)">
+            <summary>
+                Get the nativeImage field from the bitmap
+            </summary>
+            <param name="bitmap">Bitmap</param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiPlusApi.GetNativeImageAttributes(System.Drawing.Imaging.ImageAttributes)">
+            <summary>
+                Get the nativeImageAttributes field from the ImageAttributes
+            </summary>
+            <param name="imageAttributes">ImageAttributes</param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiPlusApi.GetNativeMatrix(System.Drawing.Drawing2D.Matrix)">
+            <summary>
+                Get the nativeMatrix field from the matrix
+            </summary>
+            <param name="matrix">Matrix</param>
+            <returns>IntPtr</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.GdiPlusApi.IsBlurPossible(System.Int32)">
+            <summary>
+                Returns if a GDIPlus blur can be made for the supplied radius.
+                This accounts for the "bug" I reported here:
+                http://social.technet.microsoft.com/Forums/en/w8itprogeneral/thread/99ddbe9d-556d-475a-8bab-84e25aa13a2c
+            </summary>
+            <param name="radius">int</param>
+            <returns>false if blur is not possible</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeCompatibleDcHandle">
+            <summary>
+                A CompatibleDC SafeHandle implementation
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeCompatibleDcHandle.#ctor">
+            <summary>
+                Default constructor is needed to support marshalling!!
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeCompatibleDcHandle.#ctor(System.IntPtr)">
+            <summary>
+                Create SafeCompatibleDcHandle from existing handle
+            </summary>
+            <param name="preexistingHandle">IntPtr with existing handle</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeCompatibleDcHandle.ReleaseHandle">
+            <summary>
+                Call DeleteDC, this disposes the unmanaged resources
+            </summary>
+            <returns>bool true if the DC was deleted</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeCompatibleDcHandle.SelectObject(System.Runtime.InteropServices.SafeHandle)">
+            <summary>
+                Select an object onto the DC
+            </summary>
+            <param name="objectSafeHandle">SafeHandle for object</param>
+            <returns>SafeSelectObjectHandle</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeDcHandle">
+            <summary>
+                Base class for all Safe "DC" Handles
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeDcHandle.#ctor(System.Boolean)">
+            <summary>
+                Constructor which passes the SafeHandleZeroOrMinusOneIsInvalid to the base
+            </summary>
+            <param name="ownsHandle">
+                true to reliably release the handle during the finalization phase; false to prevent reliable
+                release (not recommended).
+            </param>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeDibSectionHandle">
+            <summary>
+                A DIB Section SafeHandle implementation
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeDibSectionHandle.#ctor">
+            <summary>
+                Default constructor is needed to support marshalling!!
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeDibSectionHandle.#ctor(System.IntPtr)">
+            <summary>
+                Create a SafeDibSectionHandle for an existing DIB Section
+            </summary>
+            <param name="preexistingHandle"></param>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeGraphicsDcHandle">
+            <summary>
+                A DeviceContext SafeHandle implementation for the Graphics object
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeGraphicsDcHandle.#ctor">
+            <summary>
+                Default constructor is needed to support marshalling!!
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeGraphicsDcHandle.#ctor(System.Drawing.Graphics,System.IntPtr,System.Boolean)">
+            <summary>
+                Construct a SafeGraphicsDcHandle for the specified Graphics
+            </summary>
+            <param name="graphics">Graphics</param>
+            <param name="preexistingHandle">IntPtr hDc, from graphics.GetHdc()</param>
+            <param name="disposeGraphics">specifies if the Graphics object needs disposing</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeGraphicsDcHandle.FromGraphics(System.Drawing.Graphics,System.Boolean)">
+            <summary>
+                Create a SafeGraphicsDcHandle from a Graphics object
+            </summary>
+            <param name="graphics">Graphics object</param>
+            <param name="disposeGraphics"></param>
+            <returns>SafeGraphicsDcHandle</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeGraphicsDcHandle.ReleaseHandle">
+            <summary>
+                Call graphics.ReleaseHdc
+            </summary>
+            <returns>always true</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeGraphicsDcHandle.SelectObject(System.Runtime.InteropServices.SafeHandle)">
+            <summary>
+                The SelectObject function selects an object into the device context (DC) which this SafeGraphicsDcHandle
+                represents.
+                The new object replaces the previous object of the same type.
+            </summary>
+            <param name="newHandle">SafeHandle for the new object</param>
+            <returns>Replaced object</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeHBitmapHandle">
+            <summary>
+                A hbitmap SafeHandle implementation, use this for disposable usage of HBitmap
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeHBitmapHandle.#ctor">
+            <summary>
+                Default constructor is needed to support marshalling!!
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeHBitmapHandle.#ctor(System.IntPtr)">
+            <summary>
+                Create a SafeHBitmapHandle from an existing handle
+            </summary>
+            <param name="preexistingHandle">IntPtr to HBitmap</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeHBitmapHandle.#ctor(System.Drawing.Bitmap)">
+            <summary>
+                Create a SafeHBitmapHandle from a Bitmap
+            </summary>
+            <param name="bitmap">Bitmap to call GetHbitmap on</param>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeObjectHandle">
+            <summary>
+                Abstract class SafeObjectHandle which contains all handles that are cleaned with DeleteObject
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeObjectHandle.#ctor(System.Boolean)">
+            <summary>
+                Create SafeObjectHandle
+            </summary>
+            <param name="ownsHandle">True if the class owns the handle</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeObjectHandle.ReleaseHandle">
+            <summary>
+                Call DeleteObject
+            </summary>
+            <returns>true if this worked</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeRegionHandle">
+            <summary>
+                A hRegion SafeHandle implementation
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeRegionHandle.#ctor">
+            <summary>
+                Default constructor is needed to support marshalling!!
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeRegionHandle.#ctor(System.IntPtr)">
+            <summary>
+                Create a SafeRegionHandle from an existing handle
+            </summary>
+            <param name="preexistingHandle">IntPtr to region</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeRegionHandle.CreateRectRgn(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Directly call Gdi32.CreateRectRgn
+            </summary>
+            <param name="left"></param>
+            <param name="top"></param>
+            <param name="right"></param>
+            <param name="bottom"></param>
+            <returns>SafeRegionHandle</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeSelectObjectHandle">
+            <summary>
+                A select object safehandle implementation
+                This will select the passed SafeHandle to the HDC and replace the returned value when disposing
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeSelectObjectHandle.#ctor">
+            <summary>
+                Default constructor is needed to support marshalling!!
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeSelectObjectHandle.#ctor(System.Runtime.InteropServices.SafeHandle,System.Runtime.InteropServices.SafeHandle)">
+            <summary>
+                Constructor for the SafeSelectObjectHandle
+            </summary>
+            <param name="hdc">SafeHandle for the DC</param>
+            <param name="newObjectSafeHandle">SafeHandle to the object which is select to the DC</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeSelectObjectHandle.ReleaseHandle">
+            <summary>
+                Place the original object back on the DC
+            </summary>
+            <returns>allways true (except for exceptions)</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeSelectObjectHandle.SelectObject(System.IntPtr,System.IntPtr)">
+            <summary>
+                The SelectObject function selects an object into the specified device context (DC).
+                The new object replaces the previous object of the same type.
+            </summary>
+            <param name="hDc">IntPtr to DC</param>
+            <param name="hObject">IntPtr to the Object</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.SafeHandles.SafeWindowDcHandle">
+            <summary>
+                A WindowDC SafeHandle implementation
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeWindowDcHandle.#ctor">
+            <summary>
+                Default constructor is needed to support marshalling!!
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeWindowDcHandle.#ctor(System.IntPtr,System.IntPtr)">
+            <summary>
+                Create a SafeWindowDcHandle for an existing handöe
+            </summary>
+            <param name="hWnd">IntPtr for the window</param>
+            <param name="existingDcHandle">IntPtr to the DC</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeWindowDcHandle.FromWindow(System.IntPtr)">
+            <summary>
+            Creates a DC as SafeWindowDcHandle for the whole of the specified hWnd
+            </summary>
+            <param name="hWnd">IntPtr</param>
+            <returns>SafeWindowDcHandle</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeWindowDcHandle.FromWindowClientArea(System.IntPtr)">
+            <summary>
+            Creates a DC as SafeWindowDcHandle for the client area of the specified hWnd
+            </summary>
+            <param name="hWnd">IntPtr</param>
+            <returns>SafeWindowDcHandle</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeWindowDcHandle.FromDesktop">
+            <summary>
+            Creates a SafeWindowDcHandle for the Desktop
+            </summary>
+            <returns>SafeWindowDcHandle</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.SafeHandles.SafeWindowDcHandle.ReleaseHandle">
+            <summary>
+                ReleaseDC for the original Window
+            </summary>
+            <returns>true if this worked</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask">
+            <summary>
+            Specify the color mask when the BITMAPINFOHEADER structure biCompression uses BI_BITFIELDS
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.Blue">
+            <summary>
+            Blue component of the mask
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.Green">
+            <summary>
+            Green component of the mask
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.Red">
+            <summary>
+            Red component of the mask
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Constructor of the BitfieldColorMask
+            </summary>
+            <param name="r">byte</param>
+            <param name="g">byte</param>
+            <param name="b">byte</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.Create(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Create with BitfieldColorMask defaults
+            </summary>
+            <param name="r">byte value for Red component of the mask</param>
+            <param name="g">byte value for Green component of the mask</param>
+            <param name="b">byte value for Blue component of the mask</param>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.Equals(Dapplo.Windows.Gdi32.Structs.BitfieldColorMask)">
+            <inheritdoc />
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.op_Equality(Dapplo.Windows.Gdi32.Structs.BitfieldColorMask,Dapplo.Windows.Gdi32.Structs.BitfieldColorMask)">
+            <summary>
+            Equals
+            </summary>
+            <param name="left">BitfieldColorMask</param>
+            <param name="right">BitfieldColorMask</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitfieldColorMask.op_Inequality(Dapplo.Windows.Gdi32.Structs.BitfieldColorMask,Dapplo.Windows.Gdi32.Structs.BitfieldColorMask)">
+            <summary>
+            Not equals
+            </summary>
+            <param name="left">BitfieldColorMask</param>
+            <param name="right">BitfieldColorMask</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Structs.BitmapFileHeader">
+            <summary>
+            The BITMAPFILEHEADER structure contains information about the type, size, and layout of a file that contains a DIB.
+            See <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd183374(v=vs.85).aspx">BITMAPFILEHEADER structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapFileHeader.FileType">
+            <summary>
+            The file type; must be BM.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapFileHeader.Size">
+            <summary>
+            The size, in bytes, of the bitmap file.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapFileHeader.OffsetToBitmapBits">
+            <summary>
+            The offset, in bytes, from the beginning of the BITMAPFILEHEADER structure to the bitmap bits.
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitmapFileHeader.Create(Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader)">
+            <summary>
+            Create a BitmapFileHeader which needs a BitmapInfoHeader to calculate the values
+            </summary>
+            <param name="bitmapInfoHeader">BitmapInfoHeader</param>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader">
+            <summary>
+                See
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd183381(v=vs.85).aspx">BITMAPV5HEADER structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Size">
+            <summary>
+                The number of bytes required by the structure.
+                Applications should use this member to determine which bitmap information header structure is being used.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Width">
+            <summary>
+                The width of the bitmap, in pixels.
+                If bV5Compression is BI_JPEG or BI_PNG, the bV5Width member specifies the width of the decompressed JPEG or PNG
+                image in pixels.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Height">
+            <summary>
+                The height of the bitmap, in pixels. If the value of bV5Height is positive, the bitmap is a bottom-up DIB and its
+                origin is the lower-left corner. If bV5Height value is negative, the bitmap is a top-down DIB and its origin is the
+                upper-left corner.
+                If bV5Height is negative, indicating a top-down DIB, bV5Compression must be either BI_RGB or BI_BITFIELDS. Top-down
+                DIBs cannot be compressed.
+                If bV5Compression is BI_JPEG or BI_PNG, the bV5Height member specifies the height of the decompressed JPEG or PNG
+                image in pixels.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Planes">
+            <summary>
+                The number of planes for the target device. This value must be set to 1.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.BitCount">
+            <summary>
+                The number of bits that define each pixel and the maximum number of colors in the bitmap.
+                This member can be one of the following values:
+                0	The number of bits per pixel is specified or is implied by the JPEG or PNG file format.
+                1	The bitmap is monochrome, and the bmiColors member of BITMAPINFO contains two entries. Each bit in the bitmap
+                array represents a pixel. If the bit is clear, the pixel is displayed with the color of the first entry in the
+                bmiColors color table. If the bit is set, the pixel has the color of the second entry in the table.
+                4	The bitmap has a maximum of 16 colors, and the bmiColors member of BITMAPINFO contains up to 16 entries. Each
+                pixel in the bitmap is represented by a 4-bit index into the color table. For example, if the first byte in the
+                bitmap is 0x1F, the byte represents two pixels. The first pixel contains the color in the second table entry, and
+                the second pixel contains the color in the sixteenth table entry.
+                8	The bitmap has a maximum of 256 colors, and the bmiColors member of BITMAPINFO contains up to 256 entries. In
+                this case, each byte in the array represents a single pixel.
+                16	The bitmap has a maximum of 2^16 colors. If the bV5Compression member of the BITMAPV5HEADER structure is BI_RGB,
+                the bmiColors member of BITMAPINFO is NULL. Each WORD in the bitmap array represents a single pixel. The relative
+                intensities of red, green, and blue are represented with five bits for each color component. The value for blue is
+                in the least significant five bits, followed by five bits each for green and red. The most significant bit is not
+                used. The bmiColors color table is used for optimizing colors used on palette-based devices, and must contain the
+                number of entries specified by the bV5ClrUsed member of the BITMAPV5HEADER.
+                If the bV5Compression member of the BITMAPV5HEADER is BI_BITFIELDS, the bmiColors member contains three DWORD color
+                masks that specify the red, green, and blue components, respectively, of each pixel. Each WORD in the bitmap array
+                represents a single pixel.
+                When the bV5Compression member is BI_BITFIELDS, bits set in each DWORD mask must be contiguous and should not
+                overlap the bits of another mask. All the bits in the pixel do not need to be used.
+                24	The bitmap has a maximum of 2^24 colors, and the bmiColors member of BITMAPINFO is NULL. Each 3-byte triplet in
+                the bitmap array represents the relative intensities of blue, green, and red, respectively, for a pixel. The
+                bmiColors color table is used for optimizing colors used on palette-based devices, and must contain the number of
+                entries specified by the bV5ClrUsed member of the BITMAPV5HEADER structure.
+                32	The bitmap has a maximum of 2^32 colors. If the bV5Compression member of the BITMAPV5HEADER is BI_RGB, the
+                bmiColors member of BITMAPINFO is NULL. Each DWORD in the bitmap array represents the relative intensities of blue,
+                green, and red for a pixel. The value for blue is in the least significant 8 bits, followed by 8 bits each for
+                green and red. The high byte in each DWORD is not used. The bmiColors color table is used for optimizing colors
+                used on palette-based devices, and must contain the number of entries specified by the bV5ClrUsed member of the
+                BITMAPV5HEADER.
+                If the bV5Compression member of the BITMAPV5HEADER is BI_BITFIELDS, the bmiColors member contains three DWORD color
+                masks that specify the red, green, and blue components of each pixel. Each DWORD in the bitmap array represents a
+                single pixel.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Compression">
+            <summary>
+                Specifies that the bitmap is not compressed.
+                The bV5RedMask, bV5GreenMask, and bV5BlueMask members specify the red, green, and blue components of each pixel.
+                This is valid when used with 16- and 32-bpp bitmaps.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.SizeImage">
+            <summary>
+                The size, in bytes, of the image. This may be set to zero for BI_RGB bitmaps.
+                If bV5Compression is BI_JPEG or BI_PNG, bV5SizeImage is the size of the JPEG or PNG image buffer.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.XPelsPerMeter">
+            <summary>
+                The horizontal resolution, in pixels-per-meter, of the target device for the bitmap. An application can use this
+                value to select a bitmap from a resource group that best matches the characteristics of the current device.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.YPelsPerMeter">
+            <summary>
+                The vertical resolution, in pixels-per-meter, of the target device for the bitmap.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.ColorsUsed">
+            <summary>
+                The number of color indexes in the color table that are actually used by the bitmap. If this value is zero, the
+                bitmap uses the maximum number of colors corresponding to the value of the bV5BitCount member for the compression
+                mode specified by bV5Compression.
+                If bV5ClrUsed is nonzero and bV5BitCount is less than 16, the bV5ClrUsed member specifies the actual number of
+                colors the graphics engine or device driver accesses. If bV5BitCount is 16 or greater, the bV5ClrUsed member
+                specifies the size of the color table used to optimize performance of the system color palettes. If bV5BitCount
+                equals 16 or 32, the optimal color palette starts immediately following the BITMAPV5HEADER. If bV5ClrUsed is
+                nonzero, the color table is used on palettized devices, and bV5ClrUsed specifies the number of entries.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.ColorsImportant">
+            <summary>
+                The number of color indexes that are required for displaying the bitmap. If this value is zero, all colors are
+                required.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.RedMask">
+            <summary>
+                Color mask that specifies the red component of each pixel, valid only if bV5Compression is set to BI_BITFIELDS.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.GreenMask">
+            <summary>
+                Color mask that specifies the green component of each pixel, valid only if bV5Compression is set to BI_BITFIELDS.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.BlueMask">
+            <summary>
+                Color mask that specifies the blue component of each pixel, valid only if bV5Compression is set to BI_BITFIELDS.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.AlphaMask">
+            <summary>
+                Color mask that specifies the alpha component of each pixel.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.ColorSpace">
+            <summary>
+                The color space of the DIB.
+                See also
+                <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd372165(v=vs.85).aspx">LOGCOLORSPACE structure</a>
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Endpoints">
+            <summary>
+                A CIEXYZTRIPLE structure that specifies the x, y, and z coordinates of the three colors that correspond to the red,
+                green, and blue endpoints for the logical color space associated with the bitmap. This member is ignored unless the
+                bV5CSType member specifies LCS_CALIBRATED_RGB.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.GammaRed">
+            <summary>
+                Toned response curve for red. Used if bV5CSType is set to LCS_CALIBRATED_RGB. Specify in unsigned fixed 16.16
+                format. The upper 16 bits are the unsigned integer value. The lower 16 bits are the fractional part.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.GammaGreen">
+            <summary>
+                Toned response curve for green. Used if bV5CSType is set to LCS_CALIBRATED_RGB. Specify in unsigned fixed 16.16
+                format. The upper 16 bits are the unsigned integer value. The lower 16 bits are the fractional part.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.GammaBlue">
+            <summary>
+                Toned response curve for blue. Used if bV5CSType is set to LCS_CALIBRATED_RGB. Specify in unsigned fixed 16.16
+                format. The upper 16 bits are the unsigned integer value. The lower 16 bits are the fractional part.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Intent">
+            <summary>
+                Rendering intent for bitmap. This can be one of the following values:
+                LCS_GM_ABS_COLORIMETRIC, LCS_GM_BUSINESS, LCS_GM_GRAPHICS, LCS_GM_IMAGES
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.ProfileData">
+            <summary>
+                The offset, in bytes, from the beginning of the BITMAPV5HEADER structure to the start of the profile data. If the
+                profile is embedded, profile data is the actual profile, and it is linked. (The profile data is the null-terminated
+                file name of the profile.) This cannot be a Unicode string. It must be composed exclusively of characters from the
+                Windows character set (code page 1252). These profile members are ignored unless the bV5CSType member specifies
+                PROFILE_LINKED or PROFILE_EMBEDDED.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.ProfileSize">
+            <summary>
+                Size, in bytes, of embedded profile data.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Reserved">
+            <summary>
+                This member has been reserved. Its value should be set to zero.
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.Create(System.Int32,System.Int32,System.UInt16)">
+            <summary>
+                Constructor with values
+            </summary>
+            <param name="width">int with the width of the bitmap</param>
+            <param name="height">int with the height of the bitmap</param>
+            <param name="bpp">int with the bits per pixel of the bitmap</param>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.IsDibV5">
+            <summary>
+                Check if this is a DIB V5
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.BitmapInfoHeader.OffsetToPixels">
+            <summary>
+                Calculate the offset to the pixels
+            </summary>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Structs.BlurParams">
+            <summary>
+                Contains members that specify the nature of a Gaussian blur.
+            </summary>
+            <remarks>Cannot be pinned with GCHandle due to bool value.</remarks>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.BlurParams.Create(System.Single,System.Boolean)">
+            <summary>
+            </summary>
+            <param name="radius">
+                Real number that specifies the blur radius (the radius of the Gaussian convolution kernel) in
+                pixels. The radius must be in the range 0 through 255. As the radius increases, the resulting
+                bitmap becomes more blurry.
+            </param>
+            <param name="expandEdges">
+                Boolean value that specifies whether the bitmap expands by an amount equal to the blur radius.
+                If TRUE, the bitmap expands by an amount equal to the radius so that it can have soft edges.
+                If FALSE, the bitmap remains the same size and the soft edges are clipped.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Structs.CieXyz">
+            <summary>
+                CIE XYZ 1931 color space
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.CieXyz.X">
+            <summary>
+                is a mix of cone response curves chosen to be orthogonal to luminance and non-negative
+                FXPT2DOT30 is a fixed-point values with a 2-bit integer part and a 30-bit fractional part.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.CieXyz.Y">
+            <summary>
+                Luminance
+                FXPT2DOT30 is a fixed-point values with a 2-bit integer part and a 30-bit fractional part.
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.CieXyz.Z">
+            <summary>
+                is somewhat equal to blue
+                FXPT2DOT30 is a fixed-point values with a 2-bit integer part and a 30-bit fractional part.
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.CieXyz.Create(System.UInt32)">
+            <summary>
+                Factory for a CieXyz
+            </summary>
+            <param name="fxPt2Dot30">uint</param>
+        </member>
+        <member name="T:Dapplo.Windows.Gdi32.Structs.CieXyzTripple">
+            <summary>
+                Color representation using CIEXYZ color components
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.CieXyzTripple.Red">
+            <summary>
+                A CIE XYZ 1931 color space for the red component
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.CieXyzTripple.Green">
+            <summary>
+                A CIE XYZ 1931 color space for the green component
+            </summary>
+        </member>
+        <member name="P:Dapplo.Windows.Gdi32.Structs.CieXyzTripple.Blue">
+            <summary>
+                A CIE XYZ 1931 color space for the blue component
+            </summary>
+        </member>
+        <member name="M:Dapplo.Windows.Gdi32.Structs.CieXyzTripple.Create(Dapplo.Windows.Gdi32.Structs.CieXyz,Dapplo.Windows.Gdi32.Structs.CieXyz,Dapplo.Windows.Gdi32.Structs.CieXyz)">
+            <summary>
+                Factory method
+            </summary>
+            <param name="red">CieXyz</param>
+            <param name="green">CieXyz</param>
+            <param name="blue">CieXyz</param>
+            <returns>CieXyzTripple</returns>
+        </member>
+    </members>
+</doc>
