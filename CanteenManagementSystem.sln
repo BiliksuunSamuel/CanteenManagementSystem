@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanteenManagementSystem", "CanteenManagementSystem.csproj", "{B9186A12-0A93-48C5-93CA-AB3E115C8700}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CMS_Installer", "..\CMS_Installer\CMS_Installer.vdproj", "{322EF620-00E5-4A0D-A6F6-81678CAB82C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{B9186A12-0A93-48C5-93CA-AB3E115C8700}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9186A12-0A93-48C5-93CA-AB3E115C8700}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9186A12-0A93-48C5-93CA-AB3E115C8700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322EF620-00E5-4A0D-A6F6-81678CAB82C6}.Debug|Any CPU.ActiveCfg = Debug
+		{322EF620-00E5-4A0D-A6F6-81678CAB82C6}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
