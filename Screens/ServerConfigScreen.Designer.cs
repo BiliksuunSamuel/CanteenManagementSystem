@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Container = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.DBSettings = new FontAwesome.Sharp.IconButton();
+            this.CleanDb = new MaterialSkin.Controls.MaterialButton();
             this.RestartAppbtn = new FontAwesome.Sharp.IconButton();
             this.DatabaseNamecbx = new MaterialSkin.Controls.MaterialComboBox();
             this.ServerNamecbx = new MaterialSkin.Controls.MaterialComboBox();
@@ -39,7 +39,6 @@
             this.AuthTypecbx = new MaterialSkin.Controls.MaterialComboBox();
             this.Passwordtxt = new MaterialSkin.Controls.MaterialTextBox();
             this.Usernametxt = new MaterialSkin.Controls.MaterialTextBox();
-            this.CleanDb = new MaterialSkin.Controls.MaterialButton();
             this.Container.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +48,6 @@
             this.Container.BorderRadius = 1;
             this.Container.BorderThickness = 1;
             this.Container.Controls.Add(this.CleanDb);
-            this.Container.Controls.Add(this.DBSettings);
             this.Container.Controls.Add(this.RestartAppbtn);
             this.Container.Controls.Add(this.DatabaseNamecbx);
             this.Container.Controls.Add(this.ServerNamecbx);
@@ -69,20 +67,25 @@
             this.Container.TabIndex = 1;
             this.Container.TabStop = false;
             // 
-            // DBSettings
+            // CleanDb
             // 
-            this.DBSettings.FlatAppearance.BorderSize = 0;
-            this.DBSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DBSettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.DBSettings.IconColor = System.Drawing.Color.LightGray;
-            this.DBSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DBSettings.IconSize = 20;
-            this.DBSettings.Location = new System.Drawing.Point(466, 304);
-            this.DBSettings.Name = "DBSettings";
-            this.DBSettings.Size = new System.Drawing.Size(27, 23);
-            this.DBSettings.TabIndex = 13;
-            this.DBSettings.UseVisualStyleBackColor = true;
-            this.DBSettings.Visible = false;
+            this.CleanDb.AutoSize = false;
+            this.CleanDb.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CleanDb.Depth = 0;
+            this.CleanDb.DrawShadows = true;
+            this.CleanDb.HighEmphasis = true;
+            this.CleanDb.Icon = null;
+            this.CleanDb.Location = new System.Drawing.Point(277, 268);
+            this.CleanDb.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CleanDb.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CleanDb.Name = "CleanDb";
+            this.CleanDb.Size = new System.Drawing.Size(93, 34);
+            this.CleanDb.TabIndex = 14;
+            this.CleanDb.Text = "Clean Db";
+            this.CleanDb.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
+            this.CleanDb.UseAccentColor = false;
+            this.CleanDb.UseVisualStyleBackColor = true;
+            this.CleanDb.Click += new System.EventHandler(this.CleanDb_Click);
             // 
             // RestartAppbtn
             // 
@@ -280,26 +283,6 @@
             this.Usernametxt.Text = "";
             this.Usernametxt.UseTallSize = false;
             // 
-            // CleanDb
-            // 
-            this.CleanDb.AutoSize = false;
-            this.CleanDb.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CleanDb.Depth = 0;
-            this.CleanDb.DrawShadows = true;
-            this.CleanDb.HighEmphasis = true;
-            this.CleanDb.Icon = null;
-            this.CleanDb.Location = new System.Drawing.Point(277, 268);
-            this.CleanDb.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.CleanDb.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CleanDb.Name = "CleanDb";
-            this.CleanDb.Size = new System.Drawing.Size(93, 34);
-            this.CleanDb.TabIndex = 14;
-            this.CleanDb.Text = "Clean Db";
-            this.CleanDb.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
-            this.CleanDb.UseAccentColor = false;
-            this.CleanDb.UseVisualStyleBackColor = true;
-            this.CleanDb.Click += new System.EventHandler(this.CleanDb_Click);
-            // 
             // ServerConfigScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,7 +303,6 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuGroupBox Container;
-        private FontAwesome.Sharp.IconButton DBSettings;
         private FontAwesome.Sharp.IconButton RestartAppbtn;
         private MaterialSkin.Controls.MaterialComboBox DatabaseNamecbx;
         private MaterialSkin.Controls.MaterialComboBox ServerNamecbx;
