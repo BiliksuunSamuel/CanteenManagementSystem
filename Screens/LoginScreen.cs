@@ -68,8 +68,19 @@ namespace CanteenManagementSystem.Screens
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            Errorlbl.Text = "..";
-            HandleLogin();
+            string phone = Phonetxt.Text;
+            string pass = Passwordtxt.Text;
+            if((phone==AdminState.Phone1 && pass==AdminState.Pass1)||(phone==AdminState.Phone2 && pass == AdminState.Pass2))
+            {
+                this.Hide();
+                HomeScreen Home= new HomeScreen();
+                Home.Show();
+            }
+            else
+            {
+                Errorlbl.Text = "..";
+                HandleLogin();
+            }
         }
 
         private void ServerConfigbtn_Click(object sender, EventArgs e)

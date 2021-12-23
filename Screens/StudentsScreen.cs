@@ -40,6 +40,8 @@ namespace CanteenManagementSystem.Screens
         private void StudentsScreen_Load(object sender, EventArgs e)
         {
             GetStudents();
+            GetClasses();
+            GetfilterClasses();
         }
 
         /// <summary>
@@ -51,16 +53,6 @@ namespace CanteenManagementSystem.Screens
             {
                 DataTable dt = controller.GetRegisteredStudents().Result;
                 TbStudents.DataSource=dt;
-                //stds = controller.GetStudents().Result;
-                List<string> classes = new List<string>();
-                DataTable ctb = ccontroller.GetClasses().Result;
-                foreach (DataRow row in ctb.Rows)
-                {
-                    classes.Add(row["ClassTitle"].ToString());
-
-                }
-                Sclasscbx.DataSource = classes;
-                FilterStudentscbx.DataSource = classes;
                 excel_data_table = dt;
             }
             catch (Exception ex)
@@ -69,6 +61,48 @@ namespace CanteenManagementSystem.Screens
                 MessageBox.Show(ex.Message,ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
         }
+
+        private void GetfilterClasses()
+        {
+            try
+            {
+                List<string> classes = new List<string>();
+                DataTable ctb = ccontroller.GetClasses().Result;
+                foreach (DataRow row in ctb.Rows)
+                {
+                    classes.Add(row["ClassTitle"].ToString());
+
+                }
+                FilterStudentscbx.DataSource = classes;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GetClasses()
+        {
+            try
+            {
+
+                List<string> classes = new List<string>();
+                DataTable ctb = ccontroller.GetClasses().Result;
+                foreach (DataRow row in ctb.Rows)
+                {
+                    classes.Add(row["ClassTitle"].ToString());
+
+                }
+                Sclasscbx.DataSource = classes;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         /// <summary>
         /// REGISTER STUDENT
@@ -181,6 +215,7 @@ namespace CanteenManagementSystem.Screens
             {
                 DataTable db = controller.GetRegisteredStudents().Result;
                 TbStudents.DataSource= db;
+                GetClasses();
             }
             catch (Exception ex)
             {
@@ -282,6 +317,28 @@ namespace CanteenManagementSystem.Screens
             {
 
                 MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void StudentEditcbx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (StudentEditcbx.Checked == true)
+            {
+                DeleteStdbtn.Enabled = true;
+                materialButton1.Enabled = true;
+            }
+            else
+            {
+                DeleteStdbtn.Enabled = false;
+                materialButton1.Enabled = false;
+            }
+        }
+
+        private void Sclasscbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (StudentEditcbx.Checked)
+            {
+                USclasstxt.Text = Sclasscbx.Text;
             }
         }
     }

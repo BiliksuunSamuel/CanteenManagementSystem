@@ -54,8 +54,8 @@ namespace CanteenManagementSystem.Screens
                 {
                     classes.Add(row["ClassTitle"].ToString());
                 }
-                Classescbx.DataSource=classes;
-                FilterClasscbx.DataSource = classes;
+                //Classescbx.DataSource=classes;
+                //FilterClasscbx.DataSource = classes;
                 excel_data_table = tb;
                 Amountslbl.Text ="Amount   Ghs " +services.GetTotalPayments(tb);
 
@@ -99,8 +99,28 @@ namespace CanteenManagementSystem.Screens
         }
         private void HomeScreen_Load(object sender, EventArgs e)
         {
-            GetData();
-            Usernamelbl.Text = state.GetState().Username;
+            try
+            {
+                GetData();
+                GetClassesAndStudents();
+                GetFilterClasses();
+                if (UserState.UserInfo==null)
+                {
+                    Usernamelbl.Text = AdminState.Name;
+                    SavePaymentbtn.Enabled = false;
+                }
+                else
+                {
+                    ConfigureServer.Visible = false;
+                    Usernamelbl.Text = state.GetState().Username;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void Closebtn_Click(object sender, EventArgs e)
@@ -127,7 +147,43 @@ namespace CanteenManagementSystem.Screens
             }
         }
 
+        private void GetFilterClasses()
+        {
+            try
+            {
+                List<string> classes = new List<string>();
+                DataTable ctb = classController.GetClasses().Result;
 
+                foreach (DataRow row in ctb.Rows)
+                {
+                    classes.Add(row["ClassTitle"].ToString());
+                }
+                FilterClasscbx.DataSource = classes;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void GetClassesAndStudents()
+        {
+            try
+            {
+                List<string> classes = new List<string>();
+                DataTable ctb = classController.GetClasses().Result;
+                foreach (DataRow row in ctb.Rows)
+                {
+                    classes.Add(row["ClassTitle"].ToString());
+                }
+                Classescbx.DataSource = classes;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void SavePayment()
         {
             try
@@ -207,6 +263,8 @@ namespace CanteenManagementSystem.Screens
         private void Refreshdatabtn_Click(object sender, EventArgs e)
         {
             GetData();
+            GetClassesAndStudents();
+            GetFilterClasses();
         }
 
         /// <summary>
@@ -284,6 +342,18 @@ namespace CanteenManagementSystem.Screens
         private void LoadAllPaymentsbtn_Click(object sender, EventArgs e)
         {
             LoadAllPayments();
+        }
+
+        private void RegisterUserbtn_Click(object sender, EventArgs e)
+        {
+            RegisterScreen Register = new RegisterScreen();
+            Register.Show();
+        }
+
+        private void ConfigureServer_Click(object sender, EventArgs e)
+        {
+            ServerConfigScreen Server = new ServerConfigScreen();
+            Server.Show();
         }
     }
 }

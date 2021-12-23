@@ -13,6 +13,7 @@ using CanteenManagementSystem.Configuration;
 using System.Data.SqlClient;
 using CanteenManagementSystem.SoftwareConfigurations;
 using CanteenManagementSystem.State;
+using CanteenManagementSystem.Controller;
 namespace CanteenManagementSystem.Screens
 {
     public partial class ServerConfigScreen : MaterialForm
@@ -23,7 +24,7 @@ namespace CanteenManagementSystem.Screens
         SqlDataReader dr;
         string conString;
         ServerConfiguration sQLConnectionSettings = new ServerConfiguration();
-
+        ServerController controller = new ServerController();
         public ServerConfigScreen()
         {
             InitializeComponent();
@@ -159,6 +160,30 @@ namespace CanteenManagementSystem.Screens
         private void DatabaseNamecbx_MouseClick(object sender, MouseEventArgs e)
         {
             LoadDatabase();
+        }
+
+        /// <summary>
+        /// Clean database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CleanDb_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult results = MessageBox.Show("Do you want to format Database", "Format Database", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(results == DialogResult.Yes)
+                {
+
+                    string res = controller.CleanDataBase();
+                    MessageBox.Show(res, "Db Clean", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

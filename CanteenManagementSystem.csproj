@@ -298,6 +298,7 @@
     <Compile Include="Configuration\SQLHelper.cs" />
     <Compile Include="Controller\ClassController.cs" />
     <Compile Include="Controller\PaymentsController.cs" />
+    <Compile Include="Controller\ServerController.cs" />
     <Compile Include="Controller\StudentsController.cs" />
     <Compile Include="Controller\UsersController.cs" />
     <Compile Include="Functions\HandleExcelData.cs" />
@@ -354,6 +355,7 @@
     <Compile Include="Services\PaymentsServices.cs" />
     <Compile Include="Services\StudentsServices.cs" />
     <Compile Include="Services\UserServices.cs" />
+    <Compile Include="State\AdminState.cs" />
     <Compile Include="State\SqlState.cs" />
     <Compile Include="State\UserState.cs" />
     <Compile Include="Utilities\Utils.cs" />

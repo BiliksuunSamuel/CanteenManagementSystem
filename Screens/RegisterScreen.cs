@@ -59,5 +59,10 @@ namespace CanteenManagementSystem.Screens
             Errorlbl.Text = "..";
             HandleRegister();
         }
+
+        private void Closebtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

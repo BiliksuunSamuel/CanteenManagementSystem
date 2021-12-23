@@ -31,7 +31,6 @@
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.ServerConfigbtn = new FontAwesome.Sharp.IconButton();
             this.Errorlbl = new System.Windows.Forms.Label();
-            this.RegisterScreenbtn = new MaterialSkin.Controls.MaterialButton();
             this.Exitbtn = new FontAwesome.Sharp.IconButton();
             this.Loginbtn = new MaterialSkin.Controls.MaterialButton();
             this.Passwordtxt = new MaterialSkin.Controls.MaterialTextBox();
@@ -48,7 +47,6 @@
             this.bunifuGroupBox1.BorderThickness = 1;
             this.bunifuGroupBox1.Controls.Add(this.ServerConfigbtn);
             this.bunifuGroupBox1.Controls.Add(this.Errorlbl);
-            this.bunifuGroupBox1.Controls.Add(this.RegisterScreenbtn);
             this.bunifuGroupBox1.Controls.Add(this.Exitbtn);
             this.bunifuGroupBox1.Controls.Add(this.Loginbtn);
             this.bunifuGroupBox1.Controls.Add(this.Passwordtxt);
@@ -88,26 +86,6 @@
             this.Errorlbl.TabIndex = 11;
             this.Errorlbl.Text = "..";
             this.Errorlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // RegisterScreenbtn
-            // 
-            this.RegisterScreenbtn.AutoSize = false;
-            this.RegisterScreenbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.RegisterScreenbtn.Depth = 0;
-            this.RegisterScreenbtn.DrawShadows = true;
-            this.RegisterScreenbtn.HighEmphasis = true;
-            this.RegisterScreenbtn.Icon = null;
-            this.RegisterScreenbtn.Location = new System.Drawing.Point(207, 214);
-            this.RegisterScreenbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.RegisterScreenbtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.RegisterScreenbtn.Name = "RegisterScreenbtn";
-            this.RegisterScreenbtn.Size = new System.Drawing.Size(152, 23);
-            this.RegisterScreenbtn.TabIndex = 5;
-            this.RegisterScreenbtn.Text = "REgister account";
-            this.RegisterScreenbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
-            this.RegisterScreenbtn.UseAccentColor = false;
-            this.RegisterScreenbtn.UseVisualStyleBackColor = true;
-            this.RegisterScreenbtn.Click += new System.EventHandler(this.RegisterScreenbtn_Click);
             // 
             // Exitbtn
             // 
@@ -205,7 +183,6 @@
         private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
         private FontAwesome.Sharp.IconButton ServerConfigbtn;
         private System.Windows.Forms.Label Errorlbl;
-        private MaterialSkin.Controls.MaterialButton RegisterScreenbtn;
         private FontAwesome.Sharp.IconButton Exitbtn;
         private MaterialSkin.Controls.MaterialButton Loginbtn;
         private MaterialSkin.Controls.MaterialTextBox Passwordtxt;

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.Container = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.DBSettings = new FontAwesome.Sharp.IconButton();
+            this.RestartAppbtn = new FontAwesome.Sharp.IconButton();
             this.DatabaseNamecbx = new MaterialSkin.Controls.MaterialComboBox();
             this.ServerNamecbx = new MaterialSkin.Controls.MaterialComboBox();
             this.ServerTypecbx = new MaterialSkin.Controls.MaterialComboBox();
@@ -37,8 +39,7 @@
             this.AuthTypecbx = new MaterialSkin.Controls.MaterialComboBox();
             this.Passwordtxt = new MaterialSkin.Controls.MaterialTextBox();
             this.Usernametxt = new MaterialSkin.Controls.MaterialTextBox();
-            this.DBSettings = new FontAwesome.Sharp.IconButton();
-            this.RestartAppbtn = new FontAwesome.Sharp.IconButton();
+            this.CleanDb = new MaterialSkin.Controls.MaterialButton();
             this.Container.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.Container.BorderColor = System.Drawing.Color.LightGray;
             this.Container.BorderRadius = 1;
             this.Container.BorderThickness = 1;
+            this.Container.Controls.Add(this.CleanDb);
             this.Container.Controls.Add(this.DBSettings);
             this.Container.Controls.Add(this.RestartAppbtn);
             this.Container.Controls.Add(this.DatabaseNamecbx);
@@ -66,6 +68,37 @@
             this.Container.Size = new System.Drawing.Size(499, 333);
             this.Container.TabIndex = 1;
             this.Container.TabStop = false;
+            // 
+            // DBSettings
+            // 
+            this.DBSettings.FlatAppearance.BorderSize = 0;
+            this.DBSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DBSettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.DBSettings.IconColor = System.Drawing.Color.LightGray;
+            this.DBSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DBSettings.IconSize = 20;
+            this.DBSettings.Location = new System.Drawing.Point(466, 304);
+            this.DBSettings.Name = "DBSettings";
+            this.DBSettings.Size = new System.Drawing.Size(27, 23);
+            this.DBSettings.TabIndex = 13;
+            this.DBSettings.UseVisualStyleBackColor = true;
+            this.DBSettings.Visible = false;
+            // 
+            // RestartAppbtn
+            // 
+            this.RestartAppbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.RestartAppbtn.FlatAppearance.BorderSize = 0;
+            this.RestartAppbtn.IconChar = FontAwesome.Sharp.IconChar.Undo;
+            this.RestartAppbtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(153)))));
+            this.RestartAppbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.RestartAppbtn.IconSize = 30;
+            this.RestartAppbtn.Location = new System.Drawing.Point(377, 268);
+            this.RestartAppbtn.Name = "RestartAppbtn";
+            this.RestartAppbtn.Size = new System.Drawing.Size(81, 34);
+            this.RestartAppbtn.TabIndex = 11;
+            this.RestartAppbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.RestartAppbtn.UseVisualStyleBackColor = false;
+            this.RestartAppbtn.Click += new System.EventHandler(this.RestartAppbtn_Click);
             // 
             // DatabaseNamecbx
             // 
@@ -155,13 +188,13 @@
             this.SaveConnectionbtn.Enabled = false;
             this.SaveConnectionbtn.HighEmphasis = true;
             this.SaveConnectionbtn.Icon = null;
-            this.SaveConnectionbtn.Location = new System.Drawing.Point(206, 268);
+            this.SaveConnectionbtn.Location = new System.Drawing.Point(151, 268);
             this.SaveConnectionbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.SaveConnectionbtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.SaveConnectionbtn.Name = "SaveConnectionbtn";
-            this.SaveConnectionbtn.Size = new System.Drawing.Size(164, 34);
+            this.SaveConnectionbtn.Size = new System.Drawing.Size(118, 34);
             this.SaveConnectionbtn.TabIndex = 7;
-            this.SaveConnectionbtn.Text = "save connection";
+            this.SaveConnectionbtn.Text = "Save";
             this.SaveConnectionbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.SaveConnectionbtn.UseAccentColor = false;
             this.SaveConnectionbtn.UseVisualStyleBackColor = true;
@@ -179,10 +212,10 @@
             this.TestConnectionbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.TestConnectionbtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.TestConnectionbtn.Name = "TestConnectionbtn";
-            this.TestConnectionbtn.Size = new System.Drawing.Size(163, 34);
+            this.TestConnectionbtn.Size = new System.Drawing.Size(108, 34);
             this.TestConnectionbtn.TabIndex = 6;
-            this.TestConnectionbtn.Text = "test connection";
-            this.TestConnectionbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.TestConnectionbtn.Text = "Test";
+            this.TestConnectionbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.TestConnectionbtn.UseAccentColor = false;
             this.TestConnectionbtn.UseVisualStyleBackColor = true;
             this.TestConnectionbtn.Click += new System.EventHandler(this.TestConnectionbtn_Click);
@@ -218,7 +251,7 @@
             // 
             this.Passwordtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Passwordtxt.Depth = 0;
-            this.Passwordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Passwordtxt.Font = new System.Drawing.Font("Roboto", 12F);
             this.Passwordtxt.Hint = "Password";
             this.Passwordtxt.Location = new System.Drawing.Point(35, 181);
             this.Passwordtxt.MaxLength = 50;
@@ -235,7 +268,7 @@
             // 
             this.Usernametxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Usernametxt.Depth = 0;
-            this.Usernametxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Usernametxt.Font = new System.Drawing.Font("Roboto", 12F);
             this.Usernametxt.Hint = "Username";
             this.Usernametxt.Location = new System.Drawing.Point(35, 139);
             this.Usernametxt.MaxLength = 50;
@@ -247,36 +280,25 @@
             this.Usernametxt.Text = "";
             this.Usernametxt.UseTallSize = false;
             // 
-            // DBSettings
+            // CleanDb
             // 
-            this.DBSettings.FlatAppearance.BorderSize = 0;
-            this.DBSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DBSettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.DBSettings.IconColor = System.Drawing.Color.LightGray;
-            this.DBSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DBSettings.IconSize = 20;
-            this.DBSettings.Location = new System.Drawing.Point(466, 304);
-            this.DBSettings.Name = "DBSettings";
-            this.DBSettings.Size = new System.Drawing.Size(27, 23);
-            this.DBSettings.TabIndex = 13;
-            this.DBSettings.UseVisualStyleBackColor = true;
-            this.DBSettings.Visible = false;
-            // 
-            // RestartAppbtn
-            // 
-            this.RestartAppbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.RestartAppbtn.FlatAppearance.BorderSize = 0;
-            this.RestartAppbtn.IconChar = FontAwesome.Sharp.IconChar.Undo;
-            this.RestartAppbtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(153)))));
-            this.RestartAppbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.RestartAppbtn.IconSize = 30;
-            this.RestartAppbtn.Location = new System.Drawing.Point(377, 268);
-            this.RestartAppbtn.Name = "RestartAppbtn";
-            this.RestartAppbtn.Size = new System.Drawing.Size(81, 34);
-            this.RestartAppbtn.TabIndex = 11;
-            this.RestartAppbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.RestartAppbtn.UseVisualStyleBackColor = false;
-            this.RestartAppbtn.Click += new System.EventHandler(this.RestartAppbtn_Click);
+            this.CleanDb.AutoSize = false;
+            this.CleanDb.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CleanDb.Depth = 0;
+            this.CleanDb.DrawShadows = true;
+            this.CleanDb.HighEmphasis = true;
+            this.CleanDb.Icon = null;
+            this.CleanDb.Location = new System.Drawing.Point(277, 268);
+            this.CleanDb.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CleanDb.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CleanDb.Name = "CleanDb";
+            this.CleanDb.Size = new System.Drawing.Size(93, 34);
+            this.CleanDb.TabIndex = 14;
+            this.CleanDb.Text = "Clean Db";
+            this.CleanDb.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
+            this.CleanDb.UseAccentColor = false;
+            this.CleanDb.UseVisualStyleBackColor = true;
+            this.CleanDb.Click += new System.EventHandler(this.CleanDb_Click);
             // 
             // ServerConfigScreen
             // 
@@ -308,5 +330,6 @@
         private MaterialSkin.Controls.MaterialComboBox AuthTypecbx;
         private MaterialSkin.Controls.MaterialTextBox Passwordtxt;
         private MaterialSkin.Controls.MaterialTextBox Usernametxt;
+        private MaterialSkin.Controls.MaterialButton CleanDb;
     }
 }

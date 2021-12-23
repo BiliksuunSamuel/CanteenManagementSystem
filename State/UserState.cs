@@ -8,7 +8,7 @@ namespace CanteenManagementSystem.State
 {
     internal class UserState
     {
-        public static UserModel UserInfo { get; set; }
+        public static UserModel UserInfo { get; set; } = null;
 
         public void SetState(UserModel model)
         {
