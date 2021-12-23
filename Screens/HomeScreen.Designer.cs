@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeScreen));
             this.ParentDrag = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.MainContainer = new Bunifu.UI.WinForms.BunifuPanel();
+            this.Usernamelbl = new MaterialSkin.Controls.MaterialLabel();
+            this.Avatar = new FontAwesome.Sharp.IconButton();
             this.AddPaymentGroup = new System.Windows.Forms.GroupBox();
             this.LoadAllPaymentsbtn = new MaterialSkin.Controls.MaterialButton();
             this.Msglbl = new MaterialSkin.Controls.MaterialLabel();
@@ -41,6 +43,8 @@
             this.Studentscbx = new MaterialSkin.Controls.MaterialComboBox();
             this.Classescbx = new MaterialSkin.Controls.MaterialComboBox();
             this.ControlsGroup = new System.Windows.Forms.GroupBox();
+            this.ConfigureServer = new MaterialSkin.Controls.MaterialButton();
+            this.RegisterUserbtn = new MaterialSkin.Controls.MaterialButton();
             this.Amountslbl = new MaterialSkin.Controls.MaterialLabel();
             this.GetPaymentsByfilterbtn = new MaterialSkin.Controls.MaterialButton();
             this.DatePickertxt = new MaterialSkin.Controls.MaterialTextBox();
@@ -54,14 +58,7 @@
             this.PaymentstbGroup = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.PaymentstbPanel = new Bunifu.UI.WinForms.BunifuPanel();
             this.Paymentstb = new System.Windows.Forms.DataGridView();
-            this.Closebtn = new FontAwesome.Sharp.IconButton();
-            this.Maximizebtn = new FontAwesome.Sharp.IconButton();
-            this.Minimizebtn = new FontAwesome.Sharp.IconButton();
             this.MsgTimer = new System.Windows.Forms.Timer(this.components);
-            this.Avatar = new FontAwesome.Sharp.IconButton();
-            this.Usernamelbl = new MaterialSkin.Controls.MaterialLabel();
-            this.RegisterUserbtn = new MaterialSkin.Controls.MaterialButton();
-            this.ConfigureServer = new MaterialSkin.Controls.MaterialButton();
             this.MainContainer.SuspendLayout();
             this.AddPaymentGroup.SuspendLayout();
             this.ControlsGroup.SuspendLayout();
@@ -89,14 +86,43 @@
             this.MainContainer.BorderRadius = 3;
             this.MainContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainContainer.BorderThickness = 1;
+            this.MainContainer.Controls.Add(this.Usernamelbl);
+            this.MainContainer.Controls.Add(this.Avatar);
             this.MainContainer.Controls.Add(this.AddPaymentGroup);
             this.MainContainer.Controls.Add(this.ControlsGroup);
             this.MainContainer.Controls.Add(this.PaymentstbGroup);
-            this.MainContainer.Location = new System.Drawing.Point(21, 40);
+            this.MainContainer.Location = new System.Drawing.Point(21, 6);
             this.MainContainer.Name = "MainContainer";
             this.MainContainer.ShowBorders = true;
-            this.MainContainer.Size = new System.Drawing.Size(956, 547);
+            this.MainContainer.Size = new System.Drawing.Size(956, 591);
             this.MainContainer.TabIndex = 0;
+            // 
+            // Usernamelbl
+            // 
+            this.Usernamelbl.AutoSize = true;
+            this.Usernamelbl.Depth = 0;
+            this.Usernamelbl.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Usernamelbl.Location = new System.Drawing.Point(62, 11);
+            this.Usernamelbl.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Usernamelbl.Name = "Usernamelbl";
+            this.Usernamelbl.Size = new System.Drawing.Size(71, 19);
+            this.Usernamelbl.TabIndex = 7;
+            this.Usernamelbl.Text = "username";
+            // 
+            // Avatar
+            // 
+            this.Avatar.BackColor = System.Drawing.SystemColors.Window;
+            this.Avatar.FlatAppearance.BorderSize = 0;
+            this.Avatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Avatar.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.Avatar.IconColor = System.Drawing.Color.Gainsboro;
+            this.Avatar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Avatar.IconSize = 30;
+            this.Avatar.Location = new System.Drawing.Point(13, 10);
+            this.Avatar.Name = "Avatar";
+            this.Avatar.Size = new System.Drawing.Size(42, 23);
+            this.Avatar.TabIndex = 6;
+            this.Avatar.UseVisualStyleBackColor = false;
             // 
             // AddPaymentGroup
             // 
@@ -111,10 +137,9 @@
             this.AddPaymentGroup.Controls.Add(this.Classescbx);
             this.AddPaymentGroup.Location = new System.Drawing.Point(624, 155);
             this.AddPaymentGroup.Name = "AddPaymentGroup";
-            this.AddPaymentGroup.Size = new System.Drawing.Size(317, 377);
+            this.AddPaymentGroup.Size = new System.Drawing.Size(317, 421);
             this.AddPaymentGroup.TabIndex = 2;
             this.AddPaymentGroup.TabStop = false;
-            this.AddPaymentGroup.Text = "Add Payment";
             // 
             // LoadAllPaymentsbtn
             // 
@@ -126,7 +151,7 @@
             this.LoadAllPaymentsbtn.DrawShadows = true;
             this.LoadAllPaymentsbtn.HighEmphasis = true;
             this.LoadAllPaymentsbtn.Icon = null;
-            this.LoadAllPaymentsbtn.Location = new System.Drawing.Point(7, 335);
+            this.LoadAllPaymentsbtn.Location = new System.Drawing.Point(7, 379);
             this.LoadAllPaymentsbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.LoadAllPaymentsbtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.LoadAllPaymentsbtn.Name = "LoadAllPaymentsbtn";
@@ -142,6 +167,7 @@
             // 
             this.Msglbl.Depth = 0;
             this.Msglbl.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Msglbl.ForeColor = System.Drawing.Color.SeaGreen;
             this.Msglbl.Location = new System.Drawing.Point(6, 273);
             this.Msglbl.MouseState = MaterialSkin.MouseState.HOVER;
             this.Msglbl.Name = "Msglbl";
@@ -190,7 +216,7 @@
             this.DatePaidtxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DatePaidtxt.Depth = 0;
             this.DatePaidtxt.Font = new System.Drawing.Font("Roboto", 12F);
-            this.DatePaidtxt.Hint = "Date Paid (d/mm/yyyy)";
+            this.DatePaidtxt.Hint = "Date Paid";
             this.DatePaidtxt.Location = new System.Drawing.Point(20, 152);
             this.DatePaidtxt.MaxLength = 50;
             this.DatePaidtxt.MouseState = MaterialSkin.MouseState.OUT;
@@ -263,12 +289,51 @@
             this.ControlsGroup.Controls.Add(this.FilterClasscbx);
             this.ControlsGroup.Controls.Add(this.ClassesScreen);
             this.ControlsGroup.Controls.Add(this.StudentsScreen);
-            this.ControlsGroup.Location = new System.Drawing.Point(13, 17);
+            this.ControlsGroup.Location = new System.Drawing.Point(13, 39);
             this.ControlsGroup.Name = "ControlsGroup";
-            this.ControlsGroup.Size = new System.Drawing.Size(928, 138);
+            this.ControlsGroup.Size = new System.Drawing.Size(928, 116);
             this.ControlsGroup.TabIndex = 1;
             this.ControlsGroup.TabStop = false;
-            this.ControlsGroup.Text = "ControlsGroup";
+            // 
+            // ConfigureServer
+            // 
+            this.ConfigureServer.AutoSize = false;
+            this.ConfigureServer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ConfigureServer.Depth = 0;
+            this.ConfigureServer.DrawShadows = true;
+            this.ConfigureServer.HighEmphasis = true;
+            this.ConfigureServer.Icon = null;
+            this.ConfigureServer.Location = new System.Drawing.Point(548, 14);
+            this.ConfigureServer.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ConfigureServer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ConfigureServer.Name = "ConfigureServer";
+            this.ConfigureServer.Size = new System.Drawing.Size(103, 33);
+            this.ConfigureServer.TabIndex = 13;
+            this.ConfigureServer.Text = "Server";
+            this.ConfigureServer.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.ConfigureServer.UseAccentColor = false;
+            this.ConfigureServer.UseVisualStyleBackColor = true;
+            this.ConfigureServer.Click += new System.EventHandler(this.ConfigureServer_Click);
+            // 
+            // RegisterUserbtn
+            // 
+            this.RegisterUserbtn.AutoSize = false;
+            this.RegisterUserbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.RegisterUserbtn.Depth = 0;
+            this.RegisterUserbtn.DrawShadows = true;
+            this.RegisterUserbtn.HighEmphasis = true;
+            this.RegisterUserbtn.Icon = null;
+            this.RegisterUserbtn.Location = new System.Drawing.Point(416, 14);
+            this.RegisterUserbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.RegisterUserbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RegisterUserbtn.Name = "RegisterUserbtn";
+            this.RegisterUserbtn.Size = new System.Drawing.Size(124, 33);
+            this.RegisterUserbtn.TabIndex = 12;
+            this.RegisterUserbtn.Text = "Register User";
+            this.RegisterUserbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.RegisterUserbtn.UseAccentColor = false;
+            this.RegisterUserbtn.UseVisualStyleBackColor = true;
+            this.RegisterUserbtn.Click += new System.EventHandler(this.RegisterUserbtn_Click);
             // 
             // Amountslbl
             // 
@@ -277,7 +342,7 @@
             this.Amountslbl.Depth = 0;
             this.Amountslbl.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Amountslbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.Amountslbl.Location = new System.Drawing.Point(658, 24);
+            this.Amountslbl.Location = new System.Drawing.Point(658, 16);
             this.Amountslbl.MouseState = MaterialSkin.MouseState.HOVER;
             this.Amountslbl.Name = "Amountslbl";
             this.Amountslbl.Size = new System.Drawing.Size(253, 27);
@@ -293,7 +358,7 @@
             this.GetPaymentsByfilterbtn.DrawShadows = true;
             this.GetPaymentsByfilterbtn.HighEmphasis = true;
             this.GetPaymentsByfilterbtn.Icon = null;
-            this.GetPaymentsByfilterbtn.Location = new System.Drawing.Point(312, 100);
+            this.GetPaymentsByfilterbtn.Location = new System.Drawing.Point(312, 77);
             this.GetPaymentsByfilterbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.GetPaymentsByfilterbtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.GetPaymentsByfilterbtn.Name = "GetPaymentsByfilterbtn";
@@ -310,8 +375,7 @@
             this.DatePickertxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DatePickertxt.Depth = 0;
             this.DatePickertxt.Font = new System.Drawing.Font("Roboto", 12F);
-            this.DatePickertxt.Hint = "d/mm/yyyy";
-            this.DatePickertxt.Location = new System.Drawing.Point(569, 96);
+            this.DatePickertxt.Location = new System.Drawing.Point(569, 73);
             this.DatePickertxt.MaxLength = 50;
             this.DatePickertxt.MouseState = MaterialSkin.MouseState.OUT;
             this.DatePickertxt.Multiline = false;
@@ -330,7 +394,7 @@
             this.Refreshdatabtn.DrawShadows = true;
             this.Refreshdatabtn.HighEmphasis = true;
             this.Refreshdatabtn.Icon = null;
-            this.Refreshdatabtn.Location = new System.Drawing.Point(281, 22);
+            this.Refreshdatabtn.Location = new System.Drawing.Point(281, 14);
             this.Refreshdatabtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Refreshdatabtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.Refreshdatabtn.Name = "Refreshdatabtn";
@@ -351,7 +415,7 @@
             this.ExportDatabtn.DrawShadows = true;
             this.ExportDatabtn.HighEmphasis = true;
             this.ExportDatabtn.Icon = null;
-            this.ExportDatabtn.Location = new System.Drawing.Point(806, 94);
+            this.ExportDatabtn.Location = new System.Drawing.Point(806, 71);
             this.ExportDatabtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ExportDatabtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportDatabtn.Name = "ExportDatabtn";
@@ -368,7 +432,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(469, 106);
+            this.materialLabel2.Location = new System.Drawing.Point(469, 83);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(94, 19);
@@ -380,7 +444,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(7, 109);
+            this.materialLabel1.Location = new System.Drawing.Point(7, 86);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(100, 19);
@@ -421,7 +485,7 @@
             this.FilterClasscbx.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.FilterClasscbx.ItemHighLightForeColor = System.Drawing.Color.White;
             this.FilterClasscbx.ItemTopMargin = 3;
-            this.FilterClasscbx.Location = new System.Drawing.Point(113, 100);
+            this.FilterClasscbx.Location = new System.Drawing.Point(113, 77);
             this.FilterClasscbx.Name = "FilterClasscbx";
             this.FilterClasscbx.Size = new System.Drawing.Size(192, 32);
             this.FilterClasscbx.TabIndex = 3;
@@ -437,7 +501,7 @@
             this.ClassesScreen.DrawShadows = true;
             this.ClassesScreen.HighEmphasis = true;
             this.ClassesScreen.Icon = null;
-            this.ClassesScreen.Location = new System.Drawing.Point(150, 22);
+            this.ClassesScreen.Location = new System.Drawing.Point(150, 14);
             this.ClassesScreen.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ClassesScreen.MouseState = MaterialSkin.MouseState.HOVER;
             this.ClassesScreen.Name = "ClassesScreen";
@@ -457,7 +521,7 @@
             this.StudentsScreen.DrawShadows = true;
             this.StudentsScreen.HighEmphasis = true;
             this.StudentsScreen.Icon = null;
-            this.StudentsScreen.Location = new System.Drawing.Point(18, 22);
+            this.StudentsScreen.Location = new System.Drawing.Point(18, 14);
             this.StudentsScreen.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.StudentsScreen.MouseState = MaterialSkin.MouseState.HOVER;
             this.StudentsScreen.Name = "StudentsScreen";
@@ -484,10 +548,9 @@
             this.PaymentstbGroup.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
             this.PaymentstbGroup.Location = new System.Drawing.Point(13, 155);
             this.PaymentstbGroup.Name = "PaymentstbGroup";
-            this.PaymentstbGroup.Size = new System.Drawing.Size(605, 377);
+            this.PaymentstbGroup.Size = new System.Drawing.Size(605, 421);
             this.PaymentstbGroup.TabIndex = 0;
             this.PaymentstbGroup.TabStop = false;
-            this.PaymentstbGroup.Text = "Payments";
             // 
             // PaymentstbPanel
             // 
@@ -505,7 +568,7 @@
             this.PaymentstbPanel.Location = new System.Drawing.Point(18, 19);
             this.PaymentstbPanel.Name = "PaymentstbPanel";
             this.PaymentstbPanel.ShowBorders = true;
-            this.PaymentstbPanel.Size = new System.Drawing.Size(572, 352);
+            this.PaymentstbPanel.Size = new System.Drawing.Size(572, 396);
             this.PaymentstbPanel.TabIndex = 0;
             // 
             // Paymentstb
@@ -517,123 +580,14 @@
             this.Paymentstb.Location = new System.Drawing.Point(0, 0);
             this.Paymentstb.Name = "Paymentstb";
             this.Paymentstb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Paymentstb.Size = new System.Drawing.Size(568, 348);
+            this.Paymentstb.Size = new System.Drawing.Size(568, 392);
             this.Paymentstb.TabIndex = 0;
-            // 
-            // Closebtn
-            // 
-            this.Closebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Closebtn.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.Closebtn.IconColor = System.Drawing.Color.Silver;
-            this.Closebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Closebtn.IconSize = 20;
-            this.Closebtn.Location = new System.Drawing.Point(964, 4);
-            this.Closebtn.Name = "Closebtn";
-            this.Closebtn.Size = new System.Drawing.Size(30, 30);
-            this.Closebtn.TabIndex = 1;
-            this.Closebtn.UseVisualStyleBackColor = true;
-            this.Closebtn.Click += new System.EventHandler(this.Closebtn_Click);
-            // 
-            // Maximizebtn
-            // 
-            this.Maximizebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Maximizebtn.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.Maximizebtn.IconColor = System.Drawing.Color.Silver;
-            this.Maximizebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Maximizebtn.IconSize = 20;
-            this.Maximizebtn.Location = new System.Drawing.Point(933, 4);
-            this.Maximizebtn.Name = "Maximizebtn";
-            this.Maximizebtn.Size = new System.Drawing.Size(30, 30);
-            this.Maximizebtn.TabIndex = 2;
-            this.Maximizebtn.UseVisualStyleBackColor = true;
-            this.Maximizebtn.Click += new System.EventHandler(this.Maximizebtn_Click);
-            // 
-            // Minimizebtn
-            // 
-            this.Minimizebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Minimizebtn.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.Minimizebtn.IconColor = System.Drawing.Color.Silver;
-            this.Minimizebtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Minimizebtn.IconSize = 20;
-            this.Minimizebtn.Location = new System.Drawing.Point(899, 4);
-            this.Minimizebtn.Name = "Minimizebtn";
-            this.Minimizebtn.Size = new System.Drawing.Size(30, 30);
-            this.Minimizebtn.TabIndex = 3;
-            this.Minimizebtn.UseVisualStyleBackColor = true;
-            this.Minimizebtn.Click += new System.EventHandler(this.Minimizebtn_Click);
             // 
             // MsgTimer
             // 
             this.MsgTimer.Enabled = true;
             this.MsgTimer.Interval = 5000;
             this.MsgTimer.Tick += new System.EventHandler(this.MsgTimer_Tick);
-            // 
-            // Avatar
-            // 
-            this.Avatar.BackColor = System.Drawing.SystemColors.Window;
-            this.Avatar.FlatAppearance.BorderSize = 0;
-            this.Avatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Avatar.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.Avatar.IconColor = System.Drawing.Color.Gainsboro;
-            this.Avatar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Avatar.IconSize = 30;
-            this.Avatar.Location = new System.Drawing.Point(21, 11);
-            this.Avatar.Name = "Avatar";
-            this.Avatar.Size = new System.Drawing.Size(42, 23);
-            this.Avatar.TabIndex = 4;
-            this.Avatar.UseVisualStyleBackColor = false;
-            // 
-            // Usernamelbl
-            // 
-            this.Usernamelbl.AutoSize = true;
-            this.Usernamelbl.Depth = 0;
-            this.Usernamelbl.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Usernamelbl.Location = new System.Drawing.Point(70, 12);
-            this.Usernamelbl.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Usernamelbl.Name = "Usernamelbl";
-            this.Usernamelbl.Size = new System.Drawing.Size(71, 19);
-            this.Usernamelbl.TabIndex = 5;
-            this.Usernamelbl.Text = "username";
-            // 
-            // RegisterUserbtn
-            // 
-            this.RegisterUserbtn.AutoSize = false;
-            this.RegisterUserbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.RegisterUserbtn.Depth = 0;
-            this.RegisterUserbtn.DrawShadows = true;
-            this.RegisterUserbtn.HighEmphasis = true;
-            this.RegisterUserbtn.Icon = null;
-            this.RegisterUserbtn.Location = new System.Drawing.Point(416, 22);
-            this.RegisterUserbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.RegisterUserbtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.RegisterUserbtn.Name = "RegisterUserbtn";
-            this.RegisterUserbtn.Size = new System.Drawing.Size(124, 33);
-            this.RegisterUserbtn.TabIndex = 12;
-            this.RegisterUserbtn.Text = "Register User";
-            this.RegisterUserbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.RegisterUserbtn.UseAccentColor = false;
-            this.RegisterUserbtn.UseVisualStyleBackColor = true;
-            this.RegisterUserbtn.Click += new System.EventHandler(this.RegisterUserbtn_Click);
-            // 
-            // ConfigureServer
-            // 
-            this.ConfigureServer.AutoSize = false;
-            this.ConfigureServer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ConfigureServer.Depth = 0;
-            this.ConfigureServer.DrawShadows = true;
-            this.ConfigureServer.HighEmphasis = true;
-            this.ConfigureServer.Icon = null;
-            this.ConfigureServer.Location = new System.Drawing.Point(548, 22);
-            this.ConfigureServer.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ConfigureServer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ConfigureServer.Name = "ConfigureServer";
-            this.ConfigureServer.Size = new System.Drawing.Size(103, 33);
-            this.ConfigureServer.TabIndex = 13;
-            this.ConfigureServer.Text = "Server";
-            this.ConfigureServer.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.ConfigureServer.UseAccentColor = false;
-            this.ConfigureServer.UseVisualStyleBackColor = true;
-            this.ConfigureServer.Click += new System.EventHandler(this.ConfigureServer_Click);
             // 
             // HomeScreen
             // 
@@ -642,20 +596,16 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.ControlBox = false;
-            this.Controls.Add(this.Usernamelbl);
-            this.Controls.Add(this.Avatar);
-            this.Controls.Add(this.Minimizebtn);
-            this.Controls.Add(this.Maximizebtn);
-            this.Controls.Add(this.Closebtn);
             this.Controls.Add(this.MainContainer);
+            this.MinimizeBox = false;
             this.Name = "HomeScreen";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeScreen";
+            this.Text = "CANTEEN MANAGEMENT SYSTEM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HomeScreen_Load);
             this.MainContainer.ResumeLayout(false);
+            this.MainContainer.PerformLayout();
             this.AddPaymentGroup.ResumeLayout(false);
             this.ControlsGroup.ResumeLayout(false);
             this.ControlsGroup.PerformLayout();
@@ -663,7 +613,6 @@
             this.PaymentstbPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Paymentstb)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -675,9 +624,6 @@
         private System.Windows.Forms.GroupBox ControlsGroup;
         private Bunifu.UI.WinForms.BunifuPanel PaymentstbPanel;
         private System.Windows.Forms.DataGridView Paymentstb;
-        private FontAwesome.Sharp.IconButton Closebtn;
-        private FontAwesome.Sharp.IconButton Maximizebtn;
-        private FontAwesome.Sharp.IconButton Minimizebtn;
         private MaterialSkin.Controls.MaterialButton SavePaymentbtn;
         private MaterialSkin.Controls.MaterialTextBox AmountPaidtxt;
         private MaterialSkin.Controls.MaterialTextBox DatePaidtxt;
@@ -696,9 +642,9 @@
         private MaterialSkin.Controls.MaterialButton GetPaymentsByfilterbtn;
         private MaterialSkin.Controls.MaterialLabel Amountslbl;
         private MaterialSkin.Controls.MaterialButton LoadAllPaymentsbtn;
-        private FontAwesome.Sharp.IconButton Avatar;
-        private MaterialSkin.Controls.MaterialLabel Usernamelbl;
         private MaterialSkin.Controls.MaterialButton RegisterUserbtn;
         private MaterialSkin.Controls.MaterialButton ConfigureServer;
+        private MaterialSkin.Controls.MaterialLabel Usernamelbl;
+        private FontAwesome.Sharp.IconButton Avatar;
     }
 }

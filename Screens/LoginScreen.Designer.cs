@@ -74,6 +74,7 @@
             this.ServerConfigbtn.Size = new System.Drawing.Size(27, 23);
             this.ServerConfigbtn.TabIndex = 12;
             this.ServerConfigbtn.UseVisualStyleBackColor = true;
+            this.ServerConfigbtn.Visible = false;
             this.ServerConfigbtn.Click += new System.EventHandler(this.ServerConfigbtn_Click);
             // 
             // Errorlbl

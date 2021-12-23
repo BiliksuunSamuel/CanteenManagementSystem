@@ -16,10 +16,10 @@ using CanteenManagementSystem.State;
 using CanteenManagementSystem.Functions;
 namespace CanteenManagementSystem.Screens
 {
-    public partial class HomeScreen : MaterialForm
+    public partial class HomeScreen : Form
     {
 
-        readonly MaterialSkinManager materialSkinManager;
+        //readonly MaterialSkinManager materialSkinManager;
         PaymentsController controller = new PaymentsController();
         ClassController classController = new ClassController();
         StudentsController studentsController = new StudentsController();
@@ -32,11 +32,11 @@ namespace CanteenManagementSystem.Screens
         public HomeScreen()
         {
             InitializeComponent();
-            materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.EnforceBackcolorOnAllComponents = true;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue600, Primary.Blue900, Primary.Blue900, Accent.Blue200, TextShade.WHITE);
+            //materialSkinManager = MaterialSkinManager.Instance;
+            ////materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.EnforceBackcolorOnAllComponents = true;
+            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //materialSkinManager.ColorScheme = new ColorScheme(Primary.LightBlue600, Primary.Blue900, Primary.Blue900, Accent.Blue200, TextShade.WHITE);
         }
 
         private   void GetData()
@@ -101,10 +101,7 @@ namespace CanteenManagementSystem.Screens
         {
             try
             {
-                GetData();
-                GetClassesAndStudents();
-                GetFilterClasses();
-                if (UserState.UserInfo==null)
+                if (UserState.UserInfo == null)
                 {
                     Usernamelbl.Text = AdminState.Name;
                     SavePaymentbtn.Enabled = false;
@@ -113,6 +110,22 @@ namespace CanteenManagementSystem.Screens
                 {
                     ConfigureServer.Visible = false;
                     Usernamelbl.Text = state.GetState().Username;
+                }
+                if (UserState.UserInfo != null)
+                {
+
+                    GetData();
+                    GetClassesAndStudents();
+                    GetFilterClasses();
+                }
+                else
+                {
+                    StudentsScreen.Enabled= false;
+                    ClassesScreen.Enabled = false;
+                    Refreshdatabtn.Enabled = false;
+                    LoadAllPaymentsbtn.Enabled = false;
+                    GetPaymentsByfilterbtn.Enabled = false;
+                    ExportDatabtn.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -123,29 +136,8 @@ namespace CanteenManagementSystem.Screens
             
         }
 
-        private void Closebtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
-        private void Minimizebtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
-        private void Maximizebtn_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-                Maximizebtn.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-                Maximizebtn.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            }
-        }
 
         private void GetFilterClasses()
         {
