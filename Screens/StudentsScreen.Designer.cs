@@ -30,15 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentsScreen));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.Container = new Bunifu.UI.WinForms.BunifuPanel();
             this.TableGroup = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.StudentstbContainer = new Bunifu.UI.WinForms.BunifuPanel();
             this.TbStudents = new System.Windows.Forms.DataGridView();
             this.ActionsGroup = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.StudentEditcbx = new MaterialSkin.Controls.MaterialCheckbox();
             this.FilterStudentscbx = new Bunifu.UI.WinForms.BunifuDropdown();
             this.ReloadDatabtn = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -62,7 +63,6 @@
             this.Closebtn = new MaterialSkin.Controls.MaterialButton();
             this.Msglbl = new Bunifu.UI.WinForms.BunifuLabel();
             this.MsgTimer = new System.Windows.Forms.Timer(this.components);
-            this.StudentEditcbx = new MaterialSkin.Controls.MaterialCheckbox();
             this.Container.SuspendLayout();
             this.TableGroup.SuspendLayout();
             this.StudentstbContainer.SuspendLayout();
@@ -171,6 +171,22 @@
             this.ActionsGroup.TabIndex = 0;
             this.ActionsGroup.TabStop = false;
             this.ActionsGroup.Text = "Actions";
+            // 
+            // StudentEditcbx
+            // 
+            this.StudentEditcbx.AutoSize = true;
+            this.StudentEditcbx.Depth = 0;
+            this.StudentEditcbx.Location = new System.Drawing.Point(559, 184);
+            this.StudentEditcbx.Margin = new System.Windows.Forms.Padding(0);
+            this.StudentEditcbx.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.StudentEditcbx.MouseState = MaterialSkin.MouseState.HOVER;
+            this.StudentEditcbx.Name = "StudentEditcbx";
+            this.StudentEditcbx.Ripple = true;
+            this.StudentEditcbx.Size = new System.Drawing.Size(62, 37);
+            this.StudentEditcbx.TabIndex = 24;
+            this.StudentEditcbx.Text = "Edit";
+            this.StudentEditcbx.UseVisualStyleBackColor = true;
+            this.StudentEditcbx.CheckedChanged += new System.EventHandler(this.StudentEditcbx_CheckedChanged);
             // 
             // FilterStudentscbx
             // 
@@ -300,26 +316,26 @@
             this.Searchtxt.Modified = false;
             this.Searchtxt.Multiline = false;
             this.Searchtxt.Name = "Searchtxt";
-            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.Searchtxt.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.Searchtxt.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.Searchtxt.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.Silver;
-            stateProperties20.FillColor = System.Drawing.Color.White;
-            stateProperties20.ForeColor = System.Drawing.Color.Empty;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.Searchtxt.OnIdleState = stateProperties20;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.Searchtxt.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.Searchtxt.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.Searchtxt.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.Searchtxt.OnIdleState = stateProperties4;
             this.Searchtxt.Padding = new System.Windows.Forms.Padding(3);
             this.Searchtxt.PasswordChar = '\0';
             this.Searchtxt.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -578,6 +594,7 @@
             this.Sgendercbx.StartIndex = 0;
             this.Sgendercbx.TabIndex = 4;
             this.Sgendercbx.UseTallSize = false;
+            this.Sgendercbx.SelectedIndexChanged += new System.EventHandler(this.Sgendercbx_SelectedIndexChanged);
             // 
             // Sidtxt
             // 
@@ -670,22 +687,6 @@
             this.MsgTimer.Enabled = true;
             this.MsgTimer.Interval = 5000;
             this.MsgTimer.Tick += new System.EventHandler(this.MsgTimer_Tick);
-            // 
-            // StudentEditcbx
-            // 
-            this.StudentEditcbx.AutoSize = true;
-            this.StudentEditcbx.Depth = 0;
-            this.StudentEditcbx.Location = new System.Drawing.Point(559, 184);
-            this.StudentEditcbx.Margin = new System.Windows.Forms.Padding(0);
-            this.StudentEditcbx.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.StudentEditcbx.MouseState = MaterialSkin.MouseState.HOVER;
-            this.StudentEditcbx.Name = "StudentEditcbx";
-            this.StudentEditcbx.Ripple = true;
-            this.StudentEditcbx.Size = new System.Drawing.Size(62, 37);
-            this.StudentEditcbx.TabIndex = 24;
-            this.StudentEditcbx.Text = "Edit";
-            this.StudentEditcbx.UseVisualStyleBackColor = true;
-            this.StudentEditcbx.CheckedChanged += new System.EventHandler(this.StudentEditcbx_CheckedChanged);
             // 
             // StudentsScreen
             // 

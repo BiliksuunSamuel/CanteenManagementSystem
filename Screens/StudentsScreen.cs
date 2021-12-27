@@ -341,5 +341,13 @@ namespace CanteenManagementSystem.Screens
                 USclasstxt.Text = Sclasscbx.Text;
             }
         }
+
+        private void Sgendercbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (StudentEditcbx.Checked)
+            {
+                USgendertxt.Text = Sgendercbx.Text;
+            }
+        }
     }
 }

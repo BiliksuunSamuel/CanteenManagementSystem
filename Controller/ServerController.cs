@@ -15,7 +15,9 @@ namespace CanteenManagementSystem.Controller
             "dbo.Students",
             "dbo.Payments",
             "dbo.Users",
-            "dbo.Classes"
+            "dbo.Classes",
+            "dbo.Fees",
+            "dbo.SchoolFees",
         };
 
         /// <summary>

@@ -43,6 +43,7 @@
             this.Studentscbx = new MaterialSkin.Controls.MaterialComboBox();
             this.Classescbx = new MaterialSkin.Controls.MaterialComboBox();
             this.ControlsGroup = new System.Windows.Forms.GroupBox();
+            this.Feesbtn = new MaterialSkin.Controls.MaterialButton();
             this.ConfigureServer = new MaterialSkin.Controls.MaterialButton();
             this.RegisterUserbtn = new MaterialSkin.Controls.MaterialButton();
             this.Amountslbl = new MaterialSkin.Controls.MaterialLabel();
@@ -277,6 +278,7 @@
             // 
             this.ControlsGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ControlsGroup.Controls.Add(this.Feesbtn);
             this.ControlsGroup.Controls.Add(this.ConfigureServer);
             this.ControlsGroup.Controls.Add(this.RegisterUserbtn);
             this.ControlsGroup.Controls.Add(this.Amountslbl);
@@ -295,6 +297,26 @@
             this.ControlsGroup.TabIndex = 1;
             this.ControlsGroup.TabStop = false;
             // 
+            // Feesbtn
+            // 
+            this.Feesbtn.AutoSize = false;
+            this.Feesbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Feesbtn.Depth = 0;
+            this.Feesbtn.DrawShadows = true;
+            this.Feesbtn.HighEmphasis = true;
+            this.Feesbtn.Icon = null;
+            this.Feesbtn.Location = new System.Drawing.Point(468, 16);
+            this.Feesbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Feesbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Feesbtn.Name = "Feesbtn";
+            this.Feesbtn.Size = new System.Drawing.Size(102, 33);
+            this.Feesbtn.TabIndex = 14;
+            this.Feesbtn.Text = "Fees";
+            this.Feesbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.Feesbtn.UseAccentColor = false;
+            this.Feesbtn.UseVisualStyleBackColor = true;
+            this.Feesbtn.Click += new System.EventHandler(this.Feesbtn_Click);
+            // 
             // ConfigureServer
             // 
             this.ConfigureServer.AutoSize = false;
@@ -303,7 +325,7 @@
             this.ConfigureServer.DrawShadows = true;
             this.ConfigureServer.HighEmphasis = true;
             this.ConfigureServer.Icon = null;
-            this.ConfigureServer.Location = new System.Drawing.Point(548, 14);
+            this.ConfigureServer.Location = new System.Drawing.Point(578, 15);
             this.ConfigureServer.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ConfigureServer.MouseState = MaterialSkin.MouseState.HOVER;
             this.ConfigureServer.Name = "ConfigureServer";
@@ -323,7 +345,7 @@
             this.RegisterUserbtn.DrawShadows = true;
             this.RegisterUserbtn.HighEmphasis = true;
             this.RegisterUserbtn.Icon = null;
-            this.RegisterUserbtn.Location = new System.Drawing.Point(416, 14);
+            this.RegisterUserbtn.Location = new System.Drawing.Point(336, 16);
             this.RegisterUserbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.RegisterUserbtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.RegisterUserbtn.Name = "RegisterUserbtn";
@@ -342,10 +364,10 @@
             this.Amountslbl.Depth = 0;
             this.Amountslbl.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Amountslbl.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.Amountslbl.Location = new System.Drawing.Point(658, 16);
+            this.Amountslbl.Location = new System.Drawing.Point(688, 16);
             this.Amountslbl.MouseState = MaterialSkin.MouseState.HOVER;
             this.Amountslbl.Name = "Amountslbl";
-            this.Amountslbl.Size = new System.Drawing.Size(253, 27);
+            this.Amountslbl.Size = new System.Drawing.Size(223, 27);
             this.Amountslbl.TabIndex = 11;
             this.Amountslbl.Text = "00.00";
             this.Amountslbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -394,11 +416,11 @@
             this.Refreshdatabtn.DrawShadows = true;
             this.Refreshdatabtn.HighEmphasis = true;
             this.Refreshdatabtn.Icon = null;
-            this.Refreshdatabtn.Location = new System.Drawing.Point(281, 14);
+            this.Refreshdatabtn.Location = new System.Drawing.Point(231, 15);
             this.Refreshdatabtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Refreshdatabtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.Refreshdatabtn.Name = "Refreshdatabtn";
-            this.Refreshdatabtn.Size = new System.Drawing.Size(124, 33);
+            this.Refreshdatabtn.Size = new System.Drawing.Size(97, 33);
             this.Refreshdatabtn.TabIndex = 8;
             this.Refreshdatabtn.Text = "Refresh";
             this.Refreshdatabtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -501,11 +523,11 @@
             this.ClassesScreen.DrawShadows = true;
             this.ClassesScreen.HighEmphasis = true;
             this.ClassesScreen.Icon = null;
-            this.ClassesScreen.Location = new System.Drawing.Point(150, 14);
+            this.ClassesScreen.Location = new System.Drawing.Point(128, 14);
             this.ClassesScreen.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ClassesScreen.MouseState = MaterialSkin.MouseState.HOVER;
             this.ClassesScreen.Name = "ClassesScreen";
-            this.ClassesScreen.Size = new System.Drawing.Size(124, 33);
+            this.ClassesScreen.Size = new System.Drawing.Size(95, 33);
             this.ClassesScreen.TabIndex = 2;
             this.ClassesScreen.Text = "Classes";
             this.ClassesScreen.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -525,7 +547,7 @@
             this.StudentsScreen.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.StudentsScreen.MouseState = MaterialSkin.MouseState.HOVER;
             this.StudentsScreen.Name = "StudentsScreen";
-            this.StudentsScreen.Size = new System.Drawing.Size(124, 33);
+            this.StudentsScreen.Size = new System.Drawing.Size(102, 33);
             this.StudentsScreen.TabIndex = 1;
             this.StudentsScreen.Text = "Students";
             this.StudentsScreen.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -646,5 +668,6 @@
         private MaterialSkin.Controls.MaterialButton ConfigureServer;
         private MaterialSkin.Controls.MaterialLabel Usernamelbl;
         private FontAwesome.Sharp.IconButton Avatar;
+        private MaterialSkin.Controls.MaterialButton Feesbtn;
     }
 }

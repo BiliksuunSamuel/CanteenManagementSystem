@@ -77,3 +77,4 @@ C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Debug\Cantee
 C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Debug\CanteenManagementSystem.Screens.StudentsScreen.resources
 C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Debug\CanteenManagementSystem.Screens.ServerConfigScreen.resources
 C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Debug\CanteenManagementSystem.csproj.AssemblyReference.cache
+C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Debug\CanteenManagementSystem.Screens.SchoolFeesScreen.resources

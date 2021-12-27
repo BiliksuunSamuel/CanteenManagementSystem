@@ -126,6 +126,7 @@ namespace CanteenManagementSystem.Screens
                     LoadAllPaymentsbtn.Enabled = false;
                     GetPaymentsByfilterbtn.Enabled = false;
                     ExportDatabtn.Enabled = false;
+                    Feesbtn.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -346,6 +347,12 @@ namespace CanteenManagementSystem.Screens
         {
             ServerConfigScreen Server = new ServerConfigScreen();
             Server.Show();
+        }
+
+        private void Feesbtn_Click(object sender, EventArgs e)
+        {
+            SchoolFeesScreen Sch = new SchoolFeesScreen();
+            Sch.Show();
         }
     }
 }

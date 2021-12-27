@@ -348,12 +348,13 @@ namespace CanteenManagementSystem.Controller
         {
             try
             {
-                string cmd = "UPDATE dbo.Students SET StudentName=@name,Contact=@contact,ClassID=@cid WHERE StudentID=@sid";
+                string cmd = "UPDATE dbo.Students SET StudentName=@name,Gender=@gender,Contact=@contact,ClassID=@cid WHERE StudentID=@sid";
                 server.cmd=new SqlCommand(cmd,server.Connection());
                 server.cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = model.StudentName;
                 server.cmd.Parameters.Add("@contact", SqlDbType.VarChar).Value = model.Contact;
                 server.cmd.Parameters.Add("@cid", SqlDbType.VarChar).Value = model.ClassID;
                 server.cmd.Parameters.Add("@sid", SqlDbType.VarChar).Value = model.StudentID;
+                server.cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = model.Gender;
 
                 server.OpenConnection();
                 server.cmd.ExecuteNonQuery();

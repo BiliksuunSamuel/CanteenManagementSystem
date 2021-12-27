@@ -76,3 +76,5 @@ C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Release\Cant
 C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Release\CanteenManagementSystem.csproj.CopyComplete
 C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Release\CanteenManagementSystem.exe
 C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Release\CanteenManagementSystem.pdb
+C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Release\CanteenManagementSystem.Screens.SchoolFeesScreen.resources
+C:\Users\bhills\Desktop\TechimanProject\CanteenManagementSystem\obj\Release\CanteenManagementSystem.csproj.AssemblyReference.cache

@@ -222,6 +222,7 @@
     <Compile Include="Configuration\ServerConfiguration.cs" />
     <Compile Include="Configuration\SQLHelper.cs" />
     <Compile Include="Controller\ClassController.cs" />
+    <Compile Include="Controller\FeesController.cs" />
     <Compile Include="Controller\PaymentsController.cs" />
     <Compile Include="Controller\ServerController.cs" />
     <Compile Include="Controller\StudentsController.cs" />
@@ -230,16 +231,25 @@
     <Compile Include="Functions\HandleException.cs" />
     <Compile Include="Functions\HandlePassword.cs" />
     <Compile Include="Interface\IClassController.cs" />
+    <Compile Include="Interface\IFeesController.cs" />
     <Compile Include="Interface\IPaymentsController.cs" />
     <Compile Include="Interface\IStudentsController.cs" />
     <Compile Include="Interface\IUsersController.cs" />
     <Compile Include="Models\ClassModel.cs" />
+    <Compile Include="Models\FeePaymentModel.cs" />
+    <Compile Include="Models\FeesModel.cs" />
     <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\StudentsModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\SchoolFeesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\SchoolFeesScreen.Designer.cs">
+      <DependentUpon>SchoolFeesScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\ServerConfigScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +287,7 @@
       <DependentUpon>RegisterScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\ClassServices.cs" />
+    <Compile Include="Services\FeesServices.cs" />
     <Compile Include="Services\PaymentsServices.cs" />
     <Compile Include="Services\StudentsServices.cs" />
     <Compile Include="Services\UserServices.cs" />
@@ -295,6 +306,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\SchoolFeesScreen.resx">
+      <DependentUpon>SchoolFeesScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\ServerConfigScreen.resx">
       <DependentUpon>ServerConfigScreen.cs</DependentUpon>
     </EmbeddedResource>
